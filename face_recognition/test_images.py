@@ -98,7 +98,7 @@ def recognition(img_path, test_folder_path='../default_picture_labels'):
     # if answer is not None:
     #     answer.show_information()
 
-    dlib.hit_enter_to_continue()
+    # dlib.hit_enter_to_continue()
     return answer
 
 
@@ -196,9 +196,10 @@ def camera_recognition(test_folder_path='../default_picture_labels'):
 
     # 释放摄像
     cap.release()
-    cv2.destroyAllWindows()
+    print(10)
+    cv2.destroyWindow('camera')
     # 删除窗口
-    cv2.waitKey(0)
+
 
     # 这里用数据库识别
     answer = recognition(path_save + "img_face_" + str(cnt_p) + ".jpg",
@@ -206,6 +207,7 @@ def camera_recognition(test_folder_path='../default_picture_labels'):
     # cv2.waitKey(0)
     # cv2.destroyALLWindows()
 
+    print(10)
     return answer
 
 

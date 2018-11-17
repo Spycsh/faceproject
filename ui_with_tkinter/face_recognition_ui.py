@@ -15,15 +15,15 @@ class FaceRecognition:
     def __init__(self):
         self.root = Tk()
         self.root.title('Face Recognition System')
-        self.root.maxsize(width=1500, height=800)
-        self.root.minsize(width=1500, height=800)
+        self.root.maxsize(width=1000, height=600)
+        self.root.minsize(width=1000, height=600)
         self.root.protocol("WM_DELETE_WINDOW", self.on_exit)
 
         self.menuBar = Menu(self.root)
         self.root.config(menu=self.menuBar)  # 创建前先要实例化菜单
         self.help_menu = Menu(self.menuBar)
 
-        self.menuBar.add_command(label='Predict', font=('Times New Roman', 12), command=self.enable_test_ui)
+        self.menuBar.add_command(label='Predict', font=('Times New Roman', 8), command=self.enable_test_ui)
 # 变量设置
         self.enable_train = False
         self.enable_test = False
@@ -32,7 +32,7 @@ class FaceRecognition:
         self.training_dir = None
         self.dir_var = StringVar()
 
-        self.image_size = 144
+        self.image_size = 100
 
         self.print_pro_info = True
         self.pro_info_var = StringVar()
@@ -84,7 +84,7 @@ class FaceRecognition:
         self.chooses_box_x_scrollbar = None
         self.chooses_box_y_scrollbar = None
 
-        self.answer = None
+        self.answer = []
         self.predict_image_data = None
 
         self.answer_box = None
@@ -108,8 +108,8 @@ class FaceRecognition:
 #主界面插入图片
 
         if self.enable_test is False:
-            self.canvas = Canvas(self.root, width=1500, height=800)                     # 设置canvas
-            self.image = Image.open('../resources/MainBG.jpg').resize((1500, 800))      # 打开图片调整大小
+            self.canvas = Canvas(self.root, width=1000, height=600)                     # 设置canvas
+            self.image = Image.open('../resources/MainBG.jpg').resize((1000, 600))      # 打开图片调整大小
             self.canvas.image = ImageTk.PhotoImage(self.image)                          # 图片附着到canvas的图片上
             self.canvas.create_image(0, 0, image=self.canvas.image, anchor='nw')
             self.canvas.place(x=0, y=0)
@@ -131,30 +131,30 @@ class FaceRecognition:
         if self.image_path_var.get() == '':
             self.image_path_var.set('')
 # image 路径
-        Label(self.root, text='path of the image', font=('Times New Roman',12), fg='blue').place(x=10, y=30)
-        Button(self.root, text='Choose', font=('Times New Roman', 12), command=self.choose_file).place(x=400, y=26)
+        Label(self.root, text='path of the image', font=('Times New Roman',12), fg='blue').place(x=10, y=10)
+        Button(self.root, text='Choose', font=('Times New Roman', 12), command=self.choose_file).place(x=400, y=6)
 
-        Entry(self.root, width=56, textvariable=self.image_path_var,font=('Times New Roman', 12)).place(x=10, y=60)
+        Entry(self.root, width=56, textvariable=self.image_path_var,font=('Times New Roman', 12)).place(x=10, y=40)
 
         if self.test_state_var.get() == '':
             self.test_state_var.set('recognition')
         # if self.test_state_var.get() != 'recognition':
         #     self.create_choose_label_ui()
 # 选择功能
-        Label(self.root, text='模式', font=('楷体', 12), fg='blue').place(x=10, y=95)
+        Label(self.root, text='模式', font=('楷体', 12), fg='blue').place(x=10, y=75)
         # Checkbutton(self.root, text='人脸验证', font=('楷体', 12), variable=self.test_state_var,
         #             onvalue='verification', offvalue=0, command=self.choose_state).place(x=10, y=115)
         Checkbutton(self.root, text='recognition', font=('楷体', 12), variable=self.test_state_var,
-                    onvalue='recognition', offvalue=0, command=self.choose_state).place(x=10, y=115)
+                    onvalue='recognition', offvalue=0, command=self.choose_state).place(x=10, y=95)
         Checkbutton(self.root, text='camera recognition', font=('楷体', 12), variable=self.test_state_var,
-                    onvalue='camera recognition', offvalue=0, command=self.choose_state).place(x=390, y=115)
+                    onvalue='camera recognition', offvalue=0, command=self.choose_state).place(x=300, y=95)
 
         if self.image_path_var.get() != '':
             self.display = []
             if self.test_state_var.get() == 'recognition':
-                self.show_image(self.test_image_path, size=(800, 700), x=640, y=40)
+                self.show_image(self.test_image_path, size=(400, 300), x=400, y=40)
             else:
-                self.show_image(self.test_image_path, size=(700, 700), x=740, y=40)
+                self.show_image(self.test_image_path, size=(400, 300), x=400, y=40)
 
 
         # if self.fit_data_var.get() == '':
@@ -168,41 +168,41 @@ class FaceRecognition:
         #             command=self.choose_fit_data_var).place(x=400, y=245)
 
 # 图片库 路径
-        Label(self.root, text='path of the data folder', font=('Times New Roman',12), fg='blue').place(x=10, y=150)
-        Button(self.root, text='Choose', font=('Times New Roman', 12), command=self.choose_folder).place(x=400, y=146)
+        Label(self.root, text='path of the data folder', font=('Times New Roman', 12), fg='blue').place(x=10, y=125)
+        Button(self.root, text='Choose', font=('Times New Roman', 12), command=self.choose_folder).place(x=400, y=120)
 
-        Entry(self.root, width=56, textvariable=self.image_folder_path_var, font=('Times New Roman', 12)).place(x=10, y=180)
+        Entry(self.root, width=56, textvariable=self.image_folder_path_var, font=('Times New Roman', 12)).place(x=10, y=155)
 
 # parameters box
         Label(self.root, text='Check model\'s parameters', font=('Times New Roman', 12),
-              fg='blue').place(x=150, y=270)
-        self.test_parameters = Listbox(self.root, font=('Times New Roman', 12), width=56, height=8)
+              fg='blue').place(x=150, y=240)
+        self.test_parameters = Listbox(self.root, font=('Times New Roman', 12), width=56, height=6)
 
-        self.test_parameters.place(x=10, y=320)
+        self.test_parameters.place(x=10, y=290)
         self.test_par_x_scrollbar = Scrollbar(self.root, orient=HORIZONTAL)
         self.test_par_y_scrollbar = Scrollbar(self.root)
-        self.test_par_x_scrollbar.place(x=10, y=300, width=458)
-        self.test_par_y_scrollbar.place(x=462, y=315, height=150)
+        self.test_par_x_scrollbar.place(x=10, y=270, width=458)
+        self.test_par_y_scrollbar.place(x=462, y=285, height=130)
         self.test_parameters.config(xscrollcommand=self.test_par_x_scrollbar.set,
                                     yscrollcommand=self.test_par_y_scrollbar.set)
         self.test_par_x_scrollbar.config(command=self.test_parameters.xview)
         self.test_par_y_scrollbar.config(command=self.test_parameters.yview)
 
 # start_test button
-        Button(self.root, text='Start', font=('Times New Roman', 12), fg='blue',
-               command=self.start_test).place(x=200, y=220)
+        Button(self.root, text='Start', font=('Times New Roman', 12), fg='DarkMagenta',
+               command=self.start_test).place(x=200, y=200)
         # Button(self.root, text='Stop', font=('Times New Roman', 12), fg='blue',
         #        command=self.stop_test).place(x=270, y=490)
 
 # answer box
-        Label(self.root, text='Prediction', font=('Times New Roman', 12), fg='blue').place(x=200, y=500)
+        Label(self.root, text='Prediction', font=('Times New Roman', 12), fg='blue').place(x=200, y=417)
 
-        self.answer_box = Listbox(self.root, font=('Times New Roman', 12), width=56, height=8)
-        self.answer_box.place(x=10, y=550)
+        self.answer_box = Listbox(self.root, font=('Times New Roman', 12), width=56, height=6)
+        self.answer_box.place(x=10, y=467)
         self.answer_x_scrollbar = Scrollbar(self.root, orient=HORIZONTAL)
         self.answer_y_scrollbar = Scrollbar(self.root)
-        self.answer_x_scrollbar.place(x=10, y=528, width=458)
-        self.answer_y_scrollbar.place(x=462, y=546, height=150)
+        self.answer_x_scrollbar.place(x=10, y=445, width=458)
+        self.answer_y_scrollbar.place(x=462, y=470, height=120)
         self.answer_box.config(xscrollcommand=self.answer_x_scrollbar.set, yscrollcommand=self.answer_y_scrollbar.set)
         self.answer_x_scrollbar.config(command=self.answer_box.xview)
         self.answer_y_scrollbar.config(command=self.answer_box.yview)
@@ -220,9 +220,9 @@ class FaceRecognition:
         if self.test_image_path != '' and self.test_image_path is not None:
             self.display = []
             if self.test_state_var.get() == 'recognition':
-                self.show_image(self.test_image_path, size=(800, 700), x=640, y=40)
+                self.show_image(self.test_image_path, size=(500, 500), x=500, y=40)
             elif self.test_state_var.get() == 'camera_recognition':
-                self.show_image(self.test_image_path, size=(700, 700), x=740, y=40)
+                self.show_image(self.test_image_path, size=(500, 500), x=500, y=40)
 
 # verification, search待实现
         self.insert_all_test_parameters()
@@ -237,9 +237,9 @@ class FaceRecognition:
                     self.display = []
 
                     if self.test_state_var.get() == 'recognition':
-                        self.show_image(self.test_image_path, size=(800, 700), x=640, y=40)
+                        self.show_image(self.test_image_path, size=(500, 500), x=500, y=40)
                     else:
-                        self.show_image(self.test_image_path, size=(700,700),x=740, y=40)
+                        self.show_image(self.test_image_path, size=(500, 500), x=500, y=40)
                 self.insert_all_test_parameters()   # 所有参数（路径、模式等）
             else:
                 mb.showerror('Error', 'Please choose an image file!')
@@ -290,7 +290,7 @@ class FaceRecognition:
 
         self.choose_ui_widgets = []
 
-    def show_image(self, image_path, size=(960, 760), x=520, y=5):
+    def show_image(self, image_path, size, x, y):
         image = Image.open(image_path)
         image = image.resize(size)
         self.display.append(ImageTk.PhotoImage(image))

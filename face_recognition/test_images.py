@@ -44,10 +44,10 @@ def recognition(img_path, test_folder_path='../default_picture_labels'):
 
         # 检测人脸数
         dets = detector(img, 1)
-        #     print("Number of faces detected: {}".format(len(dets)))
-        # print(dets)
+        print("Number of faces detected: {}".format(len(dets)))
 
-        for k,d, in enumerate(dets):
+
+        for k, d, in enumerate(dets):
             #人脸关键点检测器sp
             shape = sp(img,d)
             # 画出人脸区域和关键点
@@ -59,14 +59,18 @@ def recognition(img_path, test_folder_path='../default_picture_labels'):
             # 转换为numpy array
             v = numpy.array(face_descriptor)
             descriptors.append(v)
+            # print(descriptors)
 
 
     # 加载需测的图片
     img = io.imread(img_path)
     dets = detector(img, 1)
-
+    print("Number of faces detected: {}".format(len(dets)))
+    # 为len(dets)张人脸各建一个列表
     dist = []
+    id = 0
     for k, d, in enumerate(dets):
+        dist_all = []
         shape = sp(img, d)
 
         face_descriptor = facerec.compute_face_descriptor(img, shape)
@@ -74,26 +78,42 @@ def recognition(img_path, test_folder_path='../default_picture_labels'):
         d_test = numpy.array(face_descriptor)
     # 计算欧式距离
         for i in descriptors:
-            dist_=numpy.linalg.norm(i-d_test)
-            dist.append(dist_)
+            dist_ = numpy.linalg.norm(i-d_test)
+            dist_all.append(dist_)  # 第k张人脸与第i个标签的比较数据存入列表
+        dist.append(dist_all)
+
+
+    print(dist)
+
 
     # 标签库加工，把参数标签文件夹路径中的几个jpg的人名拿出来组成标签列表
+    print(1)
     list_picture_labels = os.listdir(test_folder_path)
     candidate = []
     for i in list_picture_labels:
         if i[-4:] in ['.jpg', '.JPG', '.PNG', '.png']:
             candidate.append(i[:-4])
         else:
-            mb.showwarning('warning',"file invalid!")
+            mb.showwarning('warning', "file invalid!")
     # candidate=['xinyuanjieyi','qiaobenhuannai','shiyuanlimei','fengtimo']
+    c_d = [{}] * len(dets)
+    answer = []
+    print(dist)
+    for i in range(len(dets)):
+        # c_d[i]记录第i张人脸的标签与可能性值的信息
+        c_d[i] = dict(zip(candidate, dist[i]))
 
-    c_d = dict(zip(candidate,dist))
-
-    cd_sorted = sorted(c_d.items(), key=lambda d:d[1])
-    print(cd_sorted)
+        cd_sorted = sorted(c_d[i].items(), key=lambda d:d[1])
+        print(cd_sorted)
     # 返回信息
-    answer = "The person is:"+cd_sorted[0][0]
-    print("\n The person is:", cd_sorted[0][0])
+    # 若dist小于0.4则识别成功，大于则查无此人
+        if cd_sorted[0][1] < 0.4:
+            answer.append(cd_sorted[0][0])  # 查到的人名
+    # if cd_sorted[0][1] > 0.4:
+    #     answer = "Cannot find a person in the label database!"
+    # else:
+    #     answer = "The person is:"+cd_sorted[0][0]
+    #     print("\n The person is:", cd_sorted[0][0])
 
     # if answer is not None:
     #     answer.show_information()
@@ -207,7 +227,7 @@ def camera_recognition(test_folder_path='../default_picture_labels'):
     # cv2.waitKey(0)
     # cv2.destroyALLWindows()
 
-    print(10)
+
     return answer
 
 

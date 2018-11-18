@@ -1,10 +1,7 @@
 import numpy as np
 import cv2
-from skimage import io
 from PIL import Image, ImageDraw, ImageFont
-import os
-from tkinter import messagebox as mb
-import sys,os,dlib,glob,numpy
+import sys, os, dlib, glob, numpy
 from skimage import io
 
 from tkinter import messagebox as mb
@@ -82,9 +79,7 @@ def recognition(img_path, test_folder_path='../default_picture_labels'):
             dist_all.append(dist_)  # 第k张人脸与第i个标签的比较数据存入列表
         dist.append(dist_all)
 
-
     print(dist)
-
 
     # 标签库加工，把参数标签文件夹路径中的几个jpg的人名拿出来组成标签列表
     print(1)
@@ -216,7 +211,6 @@ def camera_recognition(test_folder_path='../default_picture_labels'):
 
     # 释放摄像
     cap.release()
-    print(10)
     cv2.destroyWindow('camera')
     # 删除窗口
 
@@ -226,7 +220,6 @@ def camera_recognition(test_folder_path='../default_picture_labels'):
                          test_folder_path=test_folder_path)
     # cv2.waitKey(0)
     # cv2.destroyALLWindows()
-
 
     return answer
 

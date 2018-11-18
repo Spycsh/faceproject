@@ -6,10 +6,7 @@ from face_recognition import test_images
 
 from PIL import Image
 from PIL import ImageTk
-import cv2
-import numpy as np
-import os
-import pandas as pd
+
 
 class FaceRecognition:
     def __init__(self):
@@ -25,46 +22,14 @@ class FaceRecognition:
 
         self.menuBar.add_command(label='Predict', font=('Times New Roman', 8), command=self.enable_test_ui)
 # 变量设置
-        self.enable_train = False
-        self.enable_test = False
-        self.enable_retrieval = False
 
-        self.training_dir = None
-        self.dir_var = StringVar()
+        self.enable_test = False
 
         self.image_size = 100
-
-        self.print_pro_info = True
-        self.pro_info_var = StringVar()
-
-        self.fit_all_data = False
-        self.fit_data_var = StringVar()
-
-        self.print_clf_info = True
-        self.clf_info_var = StringVar()
-
-        self.use_alignment = True
-        self.alignment_var = StringVar()
-
-        self.training_parameters = None
-        self.training_par_x_scrollbar = None
-        self.training_par_y_scrollbar = None
 
         self.test_parameters = None
         self.test_par_x_scrollbar = None
         self.test_par_y_scrollbar = None
-
-        self.output_frame = None
-        self.pro_info_frame = None
-        self.clf_info_frame = None
-
-        self.pro_info_box = None
-        self.pro_x_scrollbar = None
-        self.pro_y_scrollbar = None
-
-        self.clf_info_box = None
-        self.clf_x_scrollbar = None
-        self.clf_y_scrollbar = None
 
         self.test_image_path = None
         self.image_path_var = StringVar()
@@ -77,9 +42,7 @@ class FaceRecognition:
         self.test_state_var = StringVar()
 
         self.choose_ui_widgets = []
-        self.choose_labels = []
-        self.choose_label_var = StringVar()
-        self.delete_label_var = StringVar()
+
         self.chooses_box = None
         self.chooses_box_x_scrollbar = None
         self.chooses_box_y_scrollbar = None
@@ -94,16 +57,7 @@ class FaceRecognition:
         # images list
         self.display = []
 
-        # retrieval_ui
-        self.labels_array = None
-        self.paths_array = None
-        self.labels_box = None
-        self.labels_box_x_scrollbar = None
-        self.labels_box_y_scrollbar = None
-        self.label_var = StringVar()
-        self.label = None
-        self.index = None
-        self.number = None
+
 
 #主界面插入图片
 
@@ -302,98 +256,11 @@ class FaceRecognition:
                 # print(widget)
                 widget.destroy()
 
-    # def destroy_choose_label_ui(self):
-    #     for widget in self.choose_ui_widgets:
-    #         widget.destroy()
-
-    # def create_choose_label_ui(self):
-    #     self.choose_ui_widgets.append(Label(self.root, text='All labels', font=('Times New Roman', 12),
-    #                                             fg='blue'))
-    #     self.choose_ui_widgets[-1].place(x=515, y=30)
-    #
-    #     self.label_box = Listbox(self.root, font=('Times New Roman', 12), width=20, height=15)
-    #     self.labels_box.place(x=515, y=80)
-    #     self.labels_box_x_scrollbar = Scrollbar(self.root, orient=HORIZONTAL)
-    #     self.labels_box_y_scrollbar = Scrollbar(self.root)
-    #     self.labels_box_x_scrollbar.place(x=515, y=60, width=170)
-    #     self.labels_box_y_scrollbar.place(x=679, y=78, height=263)
-    #     self.labels_box.config(xscrollcommand=self.labels_box_x_scrollbar.set,
-    #                            yscrollcommand=self.labels_box_y_scrollbar.set)
-    #     self.labels_box_x_scrollbar.config(command=self.labels_box.xview)
-    #     self.labels_box_y_scrollbar.config(command=self.labels_box.yview)
-    #
-    #     self.choose_ui_widgets.append(self.labels_box)
-    #     self.choose_ui_widgets.append(self.labels_box_x_scrollbar)
-    #     self.choose_ui_widgets.append(self.labels_box_y_scrollbar)
-    #     self.labels_box.bind('<ButtonRelease-1>', self.mouse_update_choose)
-        # self.labels_box.bind('<Key>', self.key_update_number)
-
-
-
-
-        # self.choose_ui_widgets.append(Button(self.root, text='Choose', font=('Times New Roman', 12),
-        #                                          command=self.on_choose))
-        # self.choose_ui_widgets[-1].place(x=615, y=25)
-
-        # if self.labels_array:
-        #     self.insert_labels(self.labels_box, self.labels_array)
-
-
-        # self.choose_ui_widgets.append(Label(self.root, text='Chosen labels',
-        #                                         font=('Times New Roman', 12), fg='blue'))
-        # self.choose_ui_widgets[-1].place(x=515, y=400)
-        #
-        # self.choose_labels = []
-        #
-        # self.chooses_box = Listbox(self.root, font=('Times New Roman', 12), width=20, height=15)
-        #
-        # self.chooses_box.place(x=515, y=450)
-        # self.chooses_box_x_scrollbar = Scrollbar(self.root, orient=HORIZONTAL)
-        # self.chooses_box_y_scrollbar = Scrollbar(self.root)
-        # self.chooses_box_x_scrollbar.place(x=515, y=430, width=170)
-        # self.chooses_box_y_scrollbar.place(x=679, y=448, height=263)
-        # self.chooses_box.config(xscrollcommand=self.chooses_box_x_scrollbar.set,
-        #                         yscrollcommand=self.chooses_box_y_scrollbar.set)
-        # self.chooses_box_x_scrollbar.config(command=self.chooses_box.xview)
-        # self.chooses_box_y_scrollbar.config(command=self.chooses_box.yview)
-        #
-        # self.choose_ui_widgets.append(self.chooses_box)
-        # self.choose_ui_widgets.append(self.chooses_box_x_scrollbar)
-        # self.choose_ui_widgets.append(self.chooses_box_y_scrollbar)
-        #
-        # self.chooses_box.bind('<ButtonRelease-1>', self.mouse_update_delete)
-        #
-        # self.choose_ui_widgets.append(Button(self.root, text='Delete', font=('Times New Roman', 12),
-        #                                      command=self.on_delete))
-        # self.choose_ui_widgets[-1].place(x=620, y=395)
 
     def on_exit(self):
         if mb.askyesno("Exit", 'Are you sure to exit?'):
             self.root.destroy()
 
-    # def on_choose(self):
-    #     if self.choose_label_var.get() not in self.choose_labels:
-    #         self.choose_labels.append(self.choose_label_var.get())
-    #     else:
-    #
-    #         mb.showinfo('Info', 'This label has been chosen!')
-    #     self.insert_labels(self.chooses_box, self.choose_labels)
-
-    # def on_delete(self):
-    #     if self.delete_label_var.get() in self.choose_labels:
-    #         del self.choose_labels[self.choose_labels.index(self.delete_label_var.get())]
-    #     self.insert_labels(self.chooses_box, self.choose_labels)
-
-
-    # def mouse_update_delete(self, event):
-    #     if self.labels_array is not None:
-    #         self.delete_label_var.set(self.chooses_box.get(self.chooses_box.curselection()))
-    #     pass
-    #
-    # def mouse_update_choose(self, event):
-    #     if self.labels_array is not None:
-    #         self.choose_label_var.set(self.labels_box.get(self.labels_box.curselection()))
-    #     pass
 
     def choose_image_size(self, image_size):
         self.image_size = image_size
@@ -419,16 +286,13 @@ class FaceRecognition:
         if self.test_state == "recognition":
             if self.test_image_path is None or self.test_image_path == '' or self.test_folder_path is None:
                 mb.showerror("Error", 'The path is invalid!')
+                return False
         elif self.test_state == "camera recognition":
             if self.test_folder_path is None:
                 mb.showerror("Error", "No folder path")
+                return False
         return True
 
-    # @ staticmethod
-    # def insert_labels(box, labels):
-    #     box.delete(0, END)
-    #     for label in labels:
-    #         box.insert(END, label)
 
 
 def main():

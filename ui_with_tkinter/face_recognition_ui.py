@@ -3,7 +3,7 @@ from tkinter.filedialog import askdirectory
 from tkinter.filedialog import askopenfilename
 from tkinter import messagebox as mb
 from face_recognition import test_images
-
+from face_recognition import identification
 from PIL import Image
 from PIL import ImageTk
 
@@ -21,9 +21,11 @@ class FaceRecognition:
         self.help_menu = Menu(self.menuBar)
 
         self.menuBar.add_command(label='Predict', font=('Times New Roman', 8), command=self.enable_test_ui)
+        self.menuBar.add_command(label='Identification', font=('Time New Roman', 8), command=self.enable_identification_ui)
 # 变量设置
 
         self.enable_test = False
+        self.enable_identification = False
 
         self.image_size = 100
 
@@ -41,6 +43,10 @@ class FaceRecognition:
         self.test_state = 'recognition'
         self.test_state_var = StringVar()
 
+        #
+        self.identification_state = 'eye identification'
+        self.identification_state_var = StringVar()
+
         self.choose_ui_widgets = []
 
         self.chooses_box = None
@@ -54,6 +60,11 @@ class FaceRecognition:
         self.answer_x_scrollbar = None
         self.answer_y_scrollbar = None
 
+        self.identification_answer_box = None
+        self.identification_x_scrollbar = None
+        self.identification_y_scrollbar = None
+
+
         # images list
         self.display = []
 
@@ -61,7 +72,7 @@ class FaceRecognition:
 
 #主界面插入图片
 
-        if self.enable_test is False:
+        if self.enable_test is False and self.enable_identification is False:
             self.canvas = Canvas(self.root, width=1000, height=600)                     # 设置canvas
             self.image = Image.open('../resources/MainBG.jpg').resize((1000, 600))      # 打开图片调整大小
             self.canvas.image = ImageTk.PhotoImage(self.image)                          # 图片附着到canvas的图片上
@@ -79,16 +90,25 @@ class FaceRecognition:
             self.destroy_current_ui()
             self.enable_test = True
             self.create_test_ui()
+
+    def enable_identification_ui(self):
+        if self.enable_identification:
+            mb.showwarning('Warnining', 'The current ui is identification interface!')
+        else:
+            self.destroy_current_ui()
+            self.enable_identification = True
+            self.create_identification_ui()
+
 # 进入test ui
     def create_test_ui(self):
-
+        self.enable_identification = False
         if self.image_path_var.get() == '':
             self.image_path_var.set('')
 # image 路径
         Label(self.root, text='path of the image', font=('Times New Roman',12), fg='blue').place(x=10, y=10)
         Button(self.root, text='Choose', font=('Times New Roman', 12), command=self.choose_file).place(x=400, y=6)
 
-        Entry(self.root, width=56, textvariable=self.image_path_var,font=('Times New Roman', 12)).place(x=10, y=40)
+        Entry(self.root, width=56, textvariable=self.image_path_var, font=('Times New Roman', 12)).place(x=10, y=40)
 
         if self.test_state_var.get() == '':
             self.test_state_var.set('recognition')
@@ -164,6 +184,38 @@ class FaceRecognition:
         # parameter box添加参数描述
         self.insert_all_test_parameters()
 
+    def create_identification_ui(self):
+        self.enable_test = False
+
+        if self.identification_state_var.get() == '':
+            self.identification_state_var.set(' ')
+
+        Label(self.root, text='模式', font=('楷体', 12), fg='blue').place(x=10, y=10)
+        Checkbutton(self.root, text='眨眼验证', font=('楷体', 12), variable=self.identification_state_var,
+                    onvalue='eye identification', offvalue=0, command=self.choose_state_identify).place(x=10, y=40)
+        Checkbutton(self.root, text='微笑验证', font=('楷体', 12), variable=self.identification_state_var,
+                    onvalue='smile identification', offvalue=0, command=self.choose_state_identify).place(x=400, y=40)
+
+        Button(self.root, text='Start', font=('Times New Roman', 12), fg='DarkMagenta',
+               command=self.start_identify).place(x=200, y=100)
+
+        Label(self.root, text='Identification', font=('Times New Roman', 12), fg='blue').place(x=180, y=167)
+
+        self.identification_answer_box = Listbox(self.root, font=('Times New Roman', 12), width=56, height=6)
+        self.identification_answer_box.place(x=10, y=217)
+        self.identification_x_scrollbar = Scrollbar(self.root, orient=HORIZONTAL)
+        self.identification_y_scrollbar = Scrollbar(self.root)
+        self.identification_x_scrollbar.place(x=10, y=195, width=458)
+        self.identification_y_scrollbar.place(x=462, y=220, height=120)
+        self.identification_answer_box.config(xscrollcommand=self.identification_x_scrollbar.set,
+                                              yscrollcommand=self.identification_y_scrollbar.set)
+
+        self.identification_x_scrollbar.config(command=self.identification_answer_box.xview)
+        self.identification_y_scrollbar.config(command=self.identification_answer_box.yview)
+
+
+
+
     def choose_state(self):
         self.test_state = self.test_state_var.get()
         # if self.test_state == 'recognition':
@@ -180,6 +232,10 @@ class FaceRecognition:
 
 # verification, search待实现
         self.insert_all_test_parameters()
+
+    def choose_state_identify(self):
+        self.identification_state = self.identification_state_var.get()
+
 
     def choose_file(self):
         temp_path = askopenfilename()
@@ -281,6 +337,17 @@ class FaceRecognition:
 # verification 待实现
                 self.answer_box.insert(0, self.answer)
 
+    def start_identify(self):
+        if self.identification_state == "eye identification":
+            if mb.askyesno("Identification", 'Do you want to use eye identification?'):
+                self.identification_answer = identification.identify(self.identification_state)
+                print(self.identification_answer)
+                self.identification_answer_box.insert(0, self.identification_answer)
+        elif self.identification_state == "smile identification":
+            if mb.askyesno("Identification", 'Do you want to use smile identification?'):
+                self.identification_answer = identification.identify(self.identification_state)
+                print(self.identification_answer)
+                self.identification_answer_box.insert(0, self.identification_answer)
 
     def check_error(self):
         if self.test_state == "recognition":

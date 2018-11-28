@@ -26,7 +26,7 @@ def recognition(img_path, test_folder_path='../default_picture_labels'):
 
     # image_data = io.imread(image_path)
 
-    win = dlib.image_window()
+    # win = dlib.image_window()
 
     descriptors = []
 
@@ -48,9 +48,9 @@ def recognition(img_path, test_folder_path='../default_picture_labels'):
             #人脸关键点检测器sp
             shape = sp(img,d)
             # 画出人脸区域和关键点
-            win.clear_overlay()
-            win.add_overlay(d)
-            win.add_overlay(shape)
+            # win.clear_overlay()
+            # win.add_overlay(d)
+            # win.add_overlay(shape)
             # 3.描述子提取，128D向量
             face_descriptor = facerec.compute_face_descriptor(img, shape)
             # 转换为numpy array

@@ -330,9 +330,8 @@ class FaceRecognition:
             if mb.askyesno("Predict", 'Do you want to start?'):
                 self.answer_box.delete(0, END)
                 if self.test_state == "recognition":
-                    self.answer = test_images.recognition(self.test_image_path, self.test_folder_path)
+                    self.answer = test_images.recognition(self.test_image_path, self.test_folder_path, threshold=0.5)
                 elif self.test_state == "camera recognition":
-
                     self.answer = test_images.camera_recognition(self.test_folder_path)
 # verification 待实现
                 self.answer_box.insert(0, self.answer)

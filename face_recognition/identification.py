@@ -1,9 +1,10 @@
-import dlib                     #人脸识别的库dlib
-import numpy as np              #数据处理的库numpy
-import cv2                      #图像处理的库OpenCv
+import dlib                     # 人脸识别的库dlib
+import numpy as np              # 数据处理的库numpy
+import cv2                      # 图像处理的库OpenCv
 from skimage import io
 import os, dlib, glob, numpy
 from tkinter import messagebox as mb
+
 
 def identify(identification_state):
     # 使用特征提取器get_frontal_face_detector
@@ -19,7 +20,6 @@ def identify(identification_state):
     cap.set(3, 480)
     # 截图screenshoot的计数器
     # cnt = 0
-
 
     # 眉毛直线拟合数据缓冲
     # line_brow_x = []
@@ -46,8 +46,7 @@ def identify(identification_state):
         font = cv2.FONT_HERSHEY_SIMPLEX
 
         # 如果检测到人脸
-        if(len(faces)!=0):
-
+        if len(faces) != 0:
             # 对每个人脸都标出68个特征点
             for i in range(len(faces)):
                 # enumerate方法同时返回数据对象的索引和数据，k为索引，d为faces中的对象
@@ -68,7 +67,7 @@ def identify(identification_state):
 
                     cv2.imwrite(path_save, im_blank)
                     # 有匹配显示人脸名，没匹配就返回空
-                    #faces_folder_path='../default_picture_labels'
+                    # faces_folder_path='../default_picture_labels'
                     flag = compare(path_save, predictor , detector, facerec, faces_folder_path='../default_label_identification/' )
                     if not flag:
                         print(flag)

@@ -9,7 +9,7 @@ from tkinter import messagebox as mb
 # 返回结果，处理后的图片
 
 
-def recognition(img_path, test_folder_path='../default_picture_labels'):
+def recognition(img_path, test_folder_path='../default_picture_labels',threshold=0.5):
     # if state not in {'recognition', 'search'}:
     #     raise ValueError('{} not valid'.format(state))
     # 候选人脸文件夹
@@ -26,7 +26,7 @@ def recognition(img_path, test_folder_path='../default_picture_labels'):
 
     # image_data = io.imread(image_path)
 
-    # win = dlib.image_window()
+    win = dlib.image_window()
 
     descriptors = []
 
@@ -43,14 +43,13 @@ def recognition(img_path, test_folder_path='../default_picture_labels'):
         dets = detector(img, 1)
         print("Number of faces detected: {}".format(len(dets)))
 
-
         for k, d, in enumerate(dets):
-            #人脸关键点检测器sp
+            # 人脸关键点检测器sp
             shape = sp(img,d)
             # 画出人脸区域和关键点
-            # win.clear_overlay()
-            # win.add_overlay(d)
-            # win.add_overlay(shape)
+            win.clear_overlay()
+            win.add_overlay(d)
+            win.add_overlay(shape)
             # 3.描述子提取，128D向量
             face_descriptor = facerec.compute_face_descriptor(img, shape)
             # 转换为numpy array
@@ -58,14 +57,12 @@ def recognition(img_path, test_folder_path='../default_picture_labels'):
             descriptors.append(v)
             # print(descriptors)
 
-
-    # 加载需测的图片
+    #  加载需测的图片
     img = io.imread(img_path)
     dets = detector(img, 1)
     print("Number of faces detected: {}".format(len(dets)))
     # 为len(dets)张人脸各建一个列表
     dist = []
-    id = 0
     for k, d, in enumerate(dets):
         dist_all = []
         shape = sp(img, d)
@@ -102,7 +99,7 @@ def recognition(img_path, test_folder_path='../default_picture_labels'):
         print(cd_sorted)
     # 返回信息
     # 若dist小于0.4则识别成功，大于则查无此人
-        if cd_sorted[0][1] < 0.4:
+        if cd_sorted[0][1] < threshold:
             answer.append(cd_sorted[0][0])  # 查到的人名
     # if cd_sorted[0][1] > 0.4:
     #     answer = "Cannot find a person in the label database!"
@@ -114,6 +111,10 @@ def recognition(img_path, test_folder_path='../default_picture_labels'):
     #     answer.show_information()
 
     # dlib.hit_enter_to_continue()
+    if len(answer) == 0:
+        answer = "没有匹配！"
+    else:
+        answer = '检测到' + str(len(answer)) + '人:' + ','.join(answer)
     return answer
 
 
@@ -213,16 +214,11 @@ def camera_recognition(test_folder_path='../default_picture_labels'):
     cap.release()
     cv2.destroyWindow('camera')
     # 删除窗口
-
-
     # 这里用数据库识别
-    answer = recognition(path_save + "img_face_" + str(cnt_p) + ".jpg",
-                         test_folder_path=test_folder_path)
+    answer = recognition(path_save + "img_face_" + str(cnt_p) + ".jpg", test_folder_path=test_folder_path,threshold=0.4)
+    return answer
     # cv2.waitKey(0)
     # cv2.destroyALLWindows()
-
-    return answer
-
 
 # 是否要返回处理后的图片？待实现
 # 高级模式：通过矩阵比较两个人之间的相似度，需要写入csv文件，undone

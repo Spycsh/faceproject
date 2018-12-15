@@ -112,7 +112,9 @@ def recognition(img_path, test_folder_path='../default_picture_labels',threshold
                 cv2.rectangle(img, left_top, right_bottom, (0, 255, 0), 2, cv2.LINE_AA)
 
                 # putText参数:照片 / 添加的文字 / 左上角坐标 / 字体 / 字体大小 / 颜色 / 字体粗细
-                cv2.putText(img, cd_sorted[0][0], left_top_bottom, cv2.FONT_HERSHEY_COMPLEX, 2, (0, 0, 255), 2)
+                # putText(img, text, org, fontFace, fontScale, color, thickness=None, lineType=None,
+                #         bottomLeftOrigin=None):
+                cv2.putText(img, cd_sorted[0][0], left_top_bottom, cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 2)
                 cv2.imshow("img", cv2.cvtColor(img, cv2.COLOR_RGB2BGR))  # 转成ＢＧＲ显示
 
 

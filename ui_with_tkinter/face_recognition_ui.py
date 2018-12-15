@@ -126,9 +126,9 @@ class FaceRecognition:
         if self.image_path_var.get() != '':
             self.display = []
             if self.test_state_var.get() == 'recognition':
-                self.show_image(self.test_image_path, size=(400, 300), x=400, y=40)
+                self.show_image(self.test_image_path, size=(500, 500), x=500, y=40)
             else:
-                self.show_image(self.test_image_path, size=(400, 300), x=400, y=40)
+                self.show_image(self.test_image_path, size=(500, 500), x=500, y=40)
 
 
         # if self.fit_data_var.get() == '':
@@ -330,7 +330,8 @@ class FaceRecognition:
             if mb.askyesno("Predict", 'Do you want to start?'):
                 self.answer_box.delete(0, END)
                 if self.test_state == "recognition":
-                    self.answer = test_images.recognition(self.test_image_path, self.test_folder_path, threshold=0.5)
+                    self.answer = test_images.recognition(self.test_image_path, self.test_folder_path,
+                                                          threshold=0.5, answer_pic=True)
                 elif self.test_state == "camera recognition":
                     self.answer = test_images.camera_recognition(self.test_folder_path)
 # verification 待实现

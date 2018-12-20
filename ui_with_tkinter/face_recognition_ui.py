@@ -48,6 +48,7 @@ class FaceRecognition:
         self.identification_state_var = StringVar()
 
         self.choose_ui_widgets = []
+        self.choose_path_widgets = []
 
         self.chooses_box = None
         self.chooses_box_x_scrollbar = None
@@ -105,23 +106,28 @@ class FaceRecognition:
         if self.image_path_var.get() == '':
             self.image_path_var.set('')
 # image 路径
-        Label(self.root, text='path of the image', font=('Times New Roman',12), fg='blue').place(x=10, y=10)
-        Button(self.root, text='Choose', font=('Times New Roman', 12), command=self.choose_file).place(x=400, y=6)
+        self.choose_path_widgets.append(Label(self.root, text='path of the image', font=('Times New Roman',12), fg='blue'))
+        self.choose_path_widgets[-1].place(x=10, y=55)
 
-        Entry(self.root, width=56, textvariable=self.image_path_var, font=('Times New Roman', 12)).place(x=10, y=40)
+        self.choose_path_widgets.append(Button(self.root, text='Choose', font=('Times New Roman', 12), command=self.choose_file))
+        self.choose_path_widgets[-1].place(x=400, y=51)
 
+        self.choose_path_widgets.append(
+            Entry(self.root, width=56, textvariable=self.image_path_var, font=('Times New Roman', 12)))
+        self.choose_path_widgets[-1].place(x=10, y=85)
+        # print(self.choose_path_widgets)
         if self.test_state_var.get() == '':
             self.test_state_var.set('recognition')
         # if self.test_state_var.get() != 'recognition':
         #     self.create_choose_label_ui()
 # 选择功能
-        Label(self.root, text='模式', font=('楷体', 12), fg='blue').place(x=10, y=75)
+        Label(self.root, text='模式', font=('楷体', 12), fg='blue').place(x=10, y=10)
         # Checkbutton(self.root, text='人脸验证', font=('楷体', 12), variable=self.test_state_var,
         #             onvalue='verification', offvalue=0, command=self.choose_state).place(x=10, y=115)
         Checkbutton(self.root, text='recognition', font=('楷体', 12), variable=self.test_state_var,
-                    onvalue='recognition', offvalue=0, command=self.choose_state).place(x=10, y=95)
+                    onvalue='recognition', offvalue=0, command=self.choose_state).place(x=10, y=30)
         Checkbutton(self.root, text='camera recognition', font=('楷体', 12), variable=self.test_state_var,
-                    onvalue='camera recognition', offvalue=0, command=self.choose_state).place(x=300, y=95)
+                    onvalue='camera_recognition', offvalue=0, command=self.choose_state).place(x=300, y=30)
 
         if self.image_path_var.get() != '':
             self.display = []
@@ -223,15 +229,40 @@ class FaceRecognition:
         # else:
         #     self.create_choose_label_ui()
 
-        if self.test_image_path != '' and self.test_image_path is not None:
-            self.display = []
-            if self.test_state_var.get() == 'recognition':
-                self.show_image(self.test_image_path, size=(500, 500), x=500, y=40)
-            elif self.test_state_var.get() == 'camera_recognition':
-                self.show_image(self.test_image_path, size=(500, 500), x=500, y=40)
+        # if self.test_image_path != '' and self.test_image_path is not None:
+        self.display = []
+        if self.test_state_var.get() == 'recognition':
+            # print('aaa')
+            self.create_choose_image_path_ui()
+            # self.show_image(self.test_image_path, size=(500, 500), x=500, y=40)
+        elif self.test_state_var.get() == 'camera_recognition':
+            print(1)
+            print(self.choose_path_widgets)
+            self.destroy_choose_image_path_ui()
+
+            # self.show_image(self.test_image_path, size=(500, 500), x=500, y=40)
 
 # verification, search待实现
         self.insert_all_test_parameters()
+
+    def create_choose_image_path_ui(self):
+        self.choose_path_widgets = []
+        self.choose_path_widgets.append(
+            Label(self.root, text='path of the image', font=('Times New Roman', 12), fg='blue'))
+        self.choose_path_widgets[-1].place(x=10, y=55)
+
+        self.choose_path_widgets.append(
+            Button(self.root, text='Choose', font=('Times New Roman', 12), command=self.choose_file))
+        self.choose_path_widgets[-1].place(x=400, y=51)
+
+        self.choose_path_widgets.append(
+            Entry(self.root, width=56, textvariable=self.image_path_var, font=('Times New Roman', 12)))
+        self.choose_path_widgets[-1].place(x=10, y=85)
+
+    def destroy_choose_image_path_ui(self):
+        for widget in self.choose_path_widgets:
+            widget.destroy()
+
 
     def choose_state_identify(self):
         self.identification_state = self.identification_state_var.get()
@@ -298,7 +329,6 @@ class FaceRecognition:
         self.test_parameters.itemconfig(9, fg='red')
         self.test_parameters.itemconfig(10, fg='red')
 
-        self.choose_ui_widgets = []
 
     def show_image(self, image_path, size, x, y):
         image = Image.open(image_path)

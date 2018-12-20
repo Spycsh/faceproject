@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="465bdea0-58d9-40b1-9bde-c4ebde09ef8e" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/face_recognition/test_images.py" beforeDir="false" afterPath="$PROJECT_DIR$/face_recognition/test_images.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui_with_tkinter/face_recognition_ui.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui_with_tkinter/face_recognition_ui.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -15,11 +14,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="face_recognition_ui.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="face_recognition_ui.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ui_with_tkinter/face_recognition_ui.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="332" column="51" selection-start-line="332" selection-start-column="51" selection-end-line="332" selection-end-column="51" />
+            <state relative-caret-position="313">
+              <caret line="243" lean-forward="true" selection-start-line="243" selection-end-line="243" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
               </folding>
@@ -30,7 +29,7 @@
       <file leaf-file-name="face_reco_from_camera.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../人脸识别实例/face-camera/face_reco_from_camera.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="630">
+            <state relative-caret-position="1095">
               <caret line="75" column="31" selection-start-line="75" selection-start-column="26" selection-end-line="75" selection-end-column="31" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
@@ -42,7 +41,7 @@
       <file leaf-file-name="test_images.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/face_recognition/test_images.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-83">
+            <state relative-caret-position="1665">
               <caret line="117" column="31" selection-start-line="117" selection-start-column="31" selection-end-line="117" selection-end-column="31" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
@@ -54,7 +53,7 @@
       <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
         <entry file="file://$USER_HOME$/.PyCharmCE2018.1/system/python_stubs/-1282051629/cv2/__init__.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="268">
+            <state relative-caret-position="131340">
               <caret line="8767" column="20" selection-start-line="8767" selection-start-column="15" selection-end-line="8767" selection-end-column="93" />
             </state>
           </provider>
@@ -63,20 +62,8 @@
       <file leaf-file-name="identification.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/face_recognition/identification.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1106">
+            <state relative-caret-position="793">
               <caret line="234" column="25" selection-start-line="234" selection-start-column="25" selection-end-line="234" selection-end-column="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="249">
-                <caret line="38" column="23" lean-forward="true" selection-start-line="38" selection-start-column="23" selection-end-line="38" selection-end-column="23" />
-              </first_editor>
-              <second_editor />
             </state>
           </provider>
         </entry>
@@ -129,16 +116,16 @@
         <option value="$PROJECT_DIR$/face_recognition.py" />
         <option value="$PROJECT_DIR$/face_recognition/README" />
         <option value="$PROJECT_DIR$/face_recognition/identification.py" />
-        <option value="$PROJECT_DIR$/ui_with_tkinter/face_recognition_ui.py" />
         <option value="$PROJECT_DIR$/face_recognition/test_images.py" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/ui_with_tkinter/face_recognition_ui.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="753" />
-    <option name="y" value="3" />
-    <option name="width" value="960" />
+    <option name="x" value="517" />
+    <option name="y" value="55" />
+    <option name="width" value="1334" />
     <option name="height" value="1026" />
   </component>
   <component name="ProjectView">
@@ -156,22 +143,7 @@
             <path>
               <item name="faceproject" type="b2602c69:ProjectViewProjectNode" />
               <item name="faceproject" type="462c0819:PsiDirectoryNode" />
-              <item name="default_label_identification" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="faceproject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="faceproject" type="462c0819:PsiDirectoryNode" />
-              <item name="default_picture_labels" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="faceproject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="faceproject" type="462c0819:PsiDirectoryNode" />
               <item name="face_recognition" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="faceproject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="faceproject" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="faceproject" type="b2602c69:ProjectViewProjectNode" />
@@ -191,17 +163,17 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="G:\2018chensihan\faceproject\resources" />
-      <recent name="G:\2018chensihan\faceproject" />
-      <recent name="C:\Users\csh\Desktop\2018chensihan\faceproject\face_recognition\resources" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Spycsh\Desktop\faceproject\face_recognition" />
       <recent name="G:\2018chensihan\faceproject\resources" />
       <recent name="G:\2018chensihan\faceproject\face_recognition" />
       <recent name="C:\Users\csh\Desktop\2018chensihan\faceproject" />
       <recent name="C:\Users\csh\Desktop\2018chensihan\faceproject\face_recognition" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="G:\2018chensihan\faceproject\resources" />
+      <recent name="G:\2018chensihan\faceproject" />
+      <recent name="C:\Users\csh\Desktop\2018chensihan\faceproject\face_recognition\resources" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -281,14 +253,14 @@
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1928181" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.0" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="right" id="R Packages" order="3" />
       <window_info anchor="right" id="R Graphics" order="3" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5003903" side_tool="true" weight="0.3249551" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Python Console" order="7" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49960968" visible="true" weight="0.27109516" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49960968" weight="0.27109516" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.24980484" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32675046" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -302,9 +274,9 @@
       <window_info anchor="bottom" id="Find" order="1" />
     </layout>
     <layout-to-restore>
+      <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21233411" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -312,15 +284,15 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="right" id="R Graphics" order="3" />
       <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49960968" visible="true" weight="0.20825852" />
+      <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="right" id="R Packages" order="4" />
-      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Python Console" order="10" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.33393177" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.3281787" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5003903" side_tool="true" weight="0.3249551" />
-      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Message" order="0" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Python Console" order="10" />
     </layout-to-restore>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -501,13 +473,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://C:/Program Files/Anaconda3/Lib/tkinter/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25440">
-          <caret line="1699" selection-start-line="1699" selection-end-line="1699" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/LoginBG.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -575,19 +540,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ui_with_tkinter/face_recognition_ui.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="332" column="51" selection-start-line="332" selection-start-column="51" selection-end-line="332" selection-end-column="51" />
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../人脸识别实例/face-camera/face_reco_from_camera.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
+        <state relative-caret-position="1095">
           <caret line="75" column="31" selection-start-line="75" selection-start-column="26" selection-end-line="75" selection-end-column="31" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
@@ -597,14 +552,14 @@
     </entry>
     <entry file="file://$USER_HOME$/.PyCharmCE2018.1/system/python_stubs/-1282051629/cv2/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
+        <state relative-caret-position="131340">
           <caret line="8767" column="20" selection-start-line="8767" selection-start-column="15" selection-end-line="8767" selection-end-column="93" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/face_recognition/test_images.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-83">
+        <state relative-caret-position="1665">
           <caret line="117" column="31" selection-start-line="117" selection-start-column="31" selection-end-line="117" selection-end-column="31" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
@@ -618,18 +573,9 @@
     <entry file="file://$PROJECT_DIR$/resources/answer_pic1.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/xinyuanjieyi.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/xinyuanjieyi.png" />
     <entry file="file://$PROJECT_DIR$/resources/ui.png">
       <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/face_recognition/identification.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1106">
-          <caret line="234" column="25" selection-start-line="234" selection-start-column="25" selection-end-line="234" selection-end-column="25" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
@@ -638,6 +584,30 @@
             <caret line="38" column="23" lean-forward="true" selection-start-line="38" selection-start-column="23" selection-end-line="38" selection-end-column="23" />
           </first_editor>
           <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/face_recognition/identification.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="793">
+          <caret line="234" column="25" selection-start-line="234" selection-start-column="25" selection-end-line="234" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Program Files/Anaconda3/Lib/tkinter/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-505">
+          <caret line="580" column="8" selection-start-line="580" selection-start-column="8" selection-end-line="580" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ui_with_tkinter/face_recognition_ui.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="313">
+          <caret line="243" lean-forward="true" selection-start-line="243" selection-end-line="243" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

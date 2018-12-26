@@ -129,16 +129,12 @@ def recognition(img_path, test_folder_path='../default_picture_labels',threshold
 
     # dlib.hit_enter_to_continue()
 
-
     if len(answer) == 0:
         answer = "没有匹配！"
     else:
         answer = '检测到' + str(len(answer)) + '人:' + ','.join(answer)
     return answer
 
-
-#return answer
-#get face from camera
 
 def camera_recognition(test_folder_path='../default_picture_labels'):
     detector = dlib.get_frontal_face_detector()
@@ -184,12 +180,17 @@ def camera_recognition(test_folder_path='../default_picture_labels'):
 
         if len(rects) != 0:
             # 检测到人脸
-
+            # 第一个参数 ret 的值为 True 或 False，代表有没有读到图片。第二个参数是 frame，是当前截取一帧的图片
+            ret, frame = cap.read()
+            if kk == ord('s'):
+                cnt_p += 1
+                cv2.imwrite(path_save + "img_face_" + str(cnt_p) + ".jpg", frame)
+                print("写入本地：", path_save + "img_face_" + str(cnt_p) + ".jpg")
             # 矩形框
             for k, d in enumerate(rects):
                 # 计算矩形大小
-                pos_start = tuple([d.left(), d.top()])
-                pos_end = tuple([d.right(), d.bottom()])
+                # pos_start = tuple([d.left(), d.top()])
+                # pos_end = tuple([d.right(), d.bottom()])
 
                 # 计算矩形框大小
                 height = d.bottom() - d.top()
@@ -197,17 +198,17 @@ def camera_recognition(test_folder_path='../default_picture_labels'):
 
                 # 根据人脸大小生成空的图像
                 cv2.rectangle(im_rd, tuple([d.left(), d.top()]), tuple([d.right(), d.bottom()]), (0, 255, 255), 2)
-                im_blank = np.zeros((height, width, 3), np.uint8)
-
-                # 按下's'保存摄像头中的人脸到本地
-                if kk == ord('s'):
-                    cnt_p += 1
-                    for ii in range(height):
-                        for jj in range(width):
-                            im_blank[ii][jj] = im_rd[d.top() + ii][d.left() + jj]
-                    # 存储人脸图像文件
-                    cv2.imwrite(path_save + "img_face_" + str(cnt_p) + ".jpg", im_blank)
-                    print("写入本地：", path_save + "img_face_" + str(cnt_p) + ".jpg")
+                # im_blank = np.zeros((height, width, 3), np.uint8)
+            #
+            #     # 按下's'保存摄像头中的人脸到本地
+            #     if kk == ord('s'):
+            #         cnt_p += 1
+            #         for ii in range(height):
+            #             for jj in range(width):
+            #                 im_blank[ii][jj] = im_rd[d.top() + ii][d.left() + jj]
+            #         # 存储人脸图像文件
+            #         cv2.imwrite(path_save + "img_face_" + str(cnt_p) + ".jpg", im_blank)
+            #         print("写入本地：", path_save + "img_face_" + str(cnt_p) + ".jpg")
 
             # 显示人脸数
             cv2.putText(im_rd, "faces:" + str(len(rects)), (20, 50), font, 1, (0, 0, 255), 1, cv2.LINE_AA)
@@ -235,7 +236,7 @@ def camera_recognition(test_folder_path='../default_picture_labels'):
     # 删除窗口
     # 这里用数据库识别
     answer = recognition(path_save + "img_face_" + str(cnt_p) + ".jpg", test_folder_path=test_folder_path,
-                         threshold=0.4, answer_pic=False)
+                         threshold=0.5, answer_pic=True)
     return answer
     # cv2.waitKey(0)
     # cv2.destroyALLWindows()

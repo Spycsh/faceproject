@@ -4,14 +4,16 @@ from tkinter.filedialog import askopenfilename
 from tkinter import messagebox as mb
 from face_recognition import test_images
 from face_recognition import identification
+from face_recognition import search
 from PIL import Image
 from PIL import ImageTk
+import os
 
 
 class FaceRecognition:
     def __init__(self):
         self.root = Tk()
-        self.root.title('Face Recognition System')
+        self.root.title('人脸识别系统 作者：陈思瀚')
         self.root.maxsize(width=1000, height=600)
         self.root.minsize(width=1000, height=600)
         self.root.protocol("WM_DELETE_WINDOW", self.on_exit)
@@ -22,10 +24,12 @@ class FaceRecognition:
 
         self.menuBar.add_command(label='Predict', font=('Times New Roman', 8), command=self.enable_test_ui)
         self.menuBar.add_command(label='Identification', font=('Time New Roman', 8), command=self.enable_identification_ui)
+        self.menuBar.add_command(label='search', font=('Time New Roman', 8), command=self.enable_search_ui)
 # 变量设置
 
         self.enable_test = False
         self.enable_identification = False
+        self.enable_search = False
 
         self.image_size = 100
 
@@ -35,6 +39,9 @@ class FaceRecognition:
 
         self.test_image_path = None
         self.image_path_var = StringVar()
+
+        self.search_image_path = None
+        self.search_image_path_var = StringVar()
 
         #
         self.test_folder_path = None
@@ -47,7 +54,6 @@ class FaceRecognition:
         self.identification_state = 'eye identification'
         self.identification_state_var = StringVar()
 
-        self.choose_ui_widgets = []
         self.choose_path_widgets = []
 
         self.chooses_box = None
@@ -57,6 +63,8 @@ class FaceRecognition:
         self.answer = []
         self.predict_image_data = None
 
+        self.search_answer = []
+
         self.answer_box = None
         self.answer_x_scrollbar = None
         self.answer_y_scrollbar = None
@@ -65,17 +73,30 @@ class FaceRecognition:
         self.identification_x_scrollbar = None
         self.identification_y_scrollbar = None
 
+        self.search_answer_box = None
+        self.search_answer_x_scrollbar = None
+        self.search_answer_y_scrollbar = None
+        self.search_answer_box = None
+        self.search_labels_box_x_scrollbar = None
+        self.search_labels_box_y_scrollbar = None
+
+        self.search_labels_box = None
+        self.search_targets_box = None
+
+        self.choose_label_var = StringVar()
+        self.choose_labels = []
+        self.delete_label_var = StringVar()
 
         # images list
         self.display = []
 
 
 
-#主界面插入图片
+# 主界面插入图片
 
         if self.enable_test is False and self.enable_identification is False:
             self.canvas = Canvas(self.root, width=1000, height=600)                     # 设置canvas
-            self.image = Image.open('../resources/MainBG.jpg').resize((1000, 600))      # 打开图片调整大小
+            self.image = Image.open('../resources/Entrance.jpg').resize((1000, 600))      # 打开图片调整大小
             self.canvas.image = ImageTk.PhotoImage(self.image)                          # 图片附着到canvas的图片上
             self.canvas.create_image(0, 0, image=self.canvas.image, anchor='nw')
             self.canvas.place(x=0, y=0)
@@ -100,9 +121,19 @@ class FaceRecognition:
             self.enable_identification = True
             self.create_identification_ui()
 
+    def enable_search_ui(self):
+        if self.enable_search:
+            mb.showwarning('Warnining', 'The current ui is search interface!')
+        else:
+            self.destroy_current_ui()
+            self.enable_search = True
+            self.create_search_ui()
+
 # 进入test ui
     def create_test_ui(self):
         self.enable_identification = False
+        self.enable_search = False
+
         if self.image_path_var.get() == '':
             self.image_path_var.set('')
 # image 路径
@@ -127,7 +158,7 @@ class FaceRecognition:
         Checkbutton(self.root, text='recognition', font=('楷体', 12), variable=self.test_state_var,
                     onvalue='recognition', offvalue=0, command=self.choose_state).place(x=10, y=30)
         Checkbutton(self.root, text='camera recognition', font=('楷体', 12), variable=self.test_state_var,
-                    onvalue='camera_recognition', offvalue=0, command=self.choose_state).place(x=300, y=30)
+                    onvalue='camera recognition', offvalue=0, command=self.choose_state).place(x=300, y=30)
 
         if self.image_path_var.get() != '':
             self.display = []
@@ -192,6 +223,7 @@ class FaceRecognition:
 
     def create_identification_ui(self):
         self.enable_test = False
+        self.enable_search = False
 
         if self.identification_state_var.get() == '':
             self.identification_state_var.set(' ')
@@ -205,7 +237,7 @@ class FaceRecognition:
         Button(self.root, text='Start', font=('Times New Roman', 12), fg='DarkMagenta',
                command=self.start_identify).place(x=200, y=100)
 
-        Label(self.root, text='Identification', font=('Times New Roman', 12), fg='blue').place(x=180, y=167)
+        Label(self.root, text='Identification Answer', font=('Times New Roman', 12), fg='blue').place(x=180, y=167)
 
         self.identification_answer_box = Listbox(self.root, font=('Times New Roman', 12), width=56, height=6)
         self.identification_answer_box.place(x=10, y=217)
@@ -219,7 +251,84 @@ class FaceRecognition:
         self.identification_x_scrollbar.config(command=self.identification_answer_box.xview)
         self.identification_y_scrollbar.config(command=self.identification_answer_box.yview)
 
+###
+    def create_search_ui(self):
+        self.enable_test = False
+        self.enable_identification = False
+        Label(self.root, text='path of the image', font=('Times New Roman', 12), fg='blue').place(x=10, y=10)
+        Button(self.root, text='Choose', font=('Times New Roman', 12), command=self.choose_search_file).place(x=400, y=5)
+        Entry(self.root, width=56, textvariable=self.search_image_path_var, font=('Times New Roman', 12)).place(x=10, y=40)
 
+        Label(self.root, text='标签数据库', font=('楷体', 12), fg='blue').place(x=10, y=80)
+        Button(self.root, text='更新', font=('楷体', 12), fg='blue', command=self.update_search_labels).place(x=100, y=80)
+        self.search_labels_box = Listbox(self.root, font=('楷体', 12), width=26, height=15)
+        self.search_labels_box.place(x=10, y=110)
+
+        self.search_labels_box_x_scrollbar = Scrollbar(self.root, orient=HORIZONTAL)
+        self.search_labels_box_y_scrollbar = Scrollbar(self.root)
+        self.search_labels_box_x_scrollbar.place(x=10, y=370, width=210)
+        self.search_labels_box_y_scrollbar.place(x=222, y=108, height=260)
+        self.search_labels_box.config(xscrollcommand=self.search_labels_box_x_scrollbar.set,
+                                      yscrollcommand=self.search_labels_box_y_scrollbar.set)
+        self.search_labels_box_x_scrollbar.config(command=self.search_labels_box.xview)
+        self.search_labels_box_y_scrollbar.config(command=self.search_labels_box.yview)
+
+
+        Button(self.root, text='选择', font=('楷体', 12), fg='blue', command=self.on_choose).place(x=150, y=80)
+        self.search_labels_box.bind('<ButtonRelease-1>', self.mouse_update_choose)
+
+        Label(self.root, text='检测人名', font=('楷体', 12), fg='blue').place(x=250, y=80)
+        Button(self.root, text='删除', font=('楷体', 12), fg='blue', command=self.on_delete).place(x=340, y=80)
+        self.search_targets_box = Listbox(self.root, font=('楷体', 12), width=26, height=15)
+        self.search_targets_box.place(x=250, y=110)
+
+        self.search_targets_box.bind('<ButtonRelease-1>', self.mouse_update_delete)
+        # 滚动条待完成
+
+        Button(self.root, text='开始', font=('楷体', 12), fg='blue', command=self.start_search).place(x=210, y=390)
+
+        Label(self.root, text='Prediction', font=('Times New Roman', 12), fg='blue').place(x=200, y=417)
+
+        self.search_answer_box = Listbox(self.root, font=('Times New Roman', 12), width=56, height=6)
+        self.search_answer_box.place(x=10, y=467)
+        self.search_answer_x_scrollbar = Scrollbar(self.root, orient=HORIZONTAL)
+        self.search_answer_y_scrollbar = Scrollbar(self.root)
+        self.search_answer_x_scrollbar.place(x=10, y=445, width=458)
+        self.search_answer_y_scrollbar.place(x=462, y=470, height=120)
+        self.search_answer_box.config(xscrollcommand=self.search_answer_x_scrollbar.set,
+                                      yscrollcommand=self.search_answer_y_scrollbar.set)
+        self.search_answer_x_scrollbar.config(command=self.search_answer_box.xview)
+        self.search_answer_y_scrollbar.config(command=self.search_answer_box.yview)
+
+    def start_search(self):
+        # print(self.choose_labels)
+        if self.check_search_error():
+            if mb.askyesno("Search", 'Do you want to start?'):
+                self.search_answer_box.delete(0, END)
+                self.search_answer = search.search(self.search_image_path, self.choose_labels,  # 没有文件夹，是标签
+                                                          threshold=0.43, answer_pic=True)
+                self.search_answer_box.insert(0, self.search_answer)
+
+    def mouse_update_choose(self, event):
+        # if self.labels_array is not None:
+        self.choose_label_var.set(self.search_labels_box.get(self.search_labels_box.curselection()))
+        # print(self.choose_label_var)
+
+    def mouse_update_delete(self, event):
+        # if self.labels_array is not None:
+        self.delete_label_var.set(self.search_targets_box.get(self.search_targets_box.curselection()))
+
+    def on_choose(self):
+        if self.choose_label_var.get() not in self.choose_labels:
+            self.choose_labels.append(self.choose_label_var.get())
+        else:
+            mb.showinfo('Info', '标签已经选中！')
+        self.insert_labels(self.search_targets_box, self.choose_labels)
+
+    def on_delete(self):
+        if self.delete_label_var.get() in self.choose_labels:
+            del self.choose_labels[self.choose_labels.index(self.delete_label_var.get())]
+        self.insert_labels(self.search_targets_box, self.choose_labels)
 
 
     def choose_state(self):
@@ -235,7 +344,7 @@ class FaceRecognition:
             # print('aaa')
             self.create_choose_image_path_ui()
             # self.show_image(self.test_image_path, size=(500, 500), x=500, y=40)
-        elif self.test_state_var.get() == 'camera_recognition':
+        elif self.test_state_var.get() == 'camera recognition':
             print(1)
             print(self.choose_path_widgets)
             self.destroy_choose_image_path_ui()
@@ -284,6 +393,25 @@ class FaceRecognition:
                 self.insert_all_test_parameters()   # 所有参数（路径、模式等）
             else:
                 mb.showerror('Error', 'Please choose an image file!')
+
+    def choose_search_file(self):
+        temp_path = askopenfilename()
+        if temp_path is not None and temp_path != '':
+            if temp_path[-4:] in ['.jpg', '.JPG', '.PNG', '.png']:
+                self.search_image_path = temp_path
+                self.search_image_path_var.set(self.search_image_path)
+                if self.search_image_path != '':
+                    self.display = []
+                self.show_image(self.search_image_path, size=(500, 500), x=500, y=40)
+            else:
+                mb.showerror('Error', 'Please choose an image file!')
+
+    def update_search_labels(self):
+        self.search_labels_box.delete(0, END)
+        for pic in os.listdir(r'..\default_search_labels'):
+            picname = pic.split(".")[0]
+            self.search_labels_box.insert(END, picname)
+
 
     def choose_folder(self):
         temp_path = askdirectory()
@@ -342,11 +470,9 @@ class FaceRecognition:
                 # print(widget)
                 widget.destroy()
 
-
     def on_exit(self):
         if mb.askyesno("Exit", 'Are you sure to exit?'):
             self.root.destroy()
-
 
     def choose_image_size(self, image_size):
         self.image_size = image_size
@@ -390,6 +516,18 @@ class FaceRecognition:
                 return False
         return True
 
+    def check_search_error(self):
+        if self.search_image_path is None or self.search_image_path == '':
+            print(self.search_image_path)
+            mb.showerror("Error", 'The path is invalid!')
+            return False
+        return True
+
+    @ staticmethod
+    def insert_labels(box, labels):
+        box.delete(0, END)
+        for label in labels:
+            box.insert(END, label)
 
 
 def main():

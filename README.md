@@ -1,6 +1,6 @@
 # Faceproject
 ## GUI 实现
->描述:一个集成了人脸识别、人脸认证、人脸查找(待实现)等功能的界面。
+>描述:一个集成了人脸识别、人脸认证、人脸查找等功能的界面。
 
 **camera_photo**
 
@@ -30,11 +30,23 @@
 
 进入界面背景资源，以及模型资源
 
-## 示例1
-![新垣结衣](/resources/answer_pic1.png)
+## 人脸识别页面
+### 普通识别展示
 
-## 示例2
-![张若昀唐艺昕](/resources/answer_pic2.png)
+![tfboys](resources/1.png)![tfboys_](resources/2.png)
+#### *More...*
+![新垣结衣](resources/answer_pic1.png)![张若昀唐艺昕](resources/answer_pic2.png)
+### 摄像头识别展示>_>
+![C&W](resources/3.png)![C&W](resources/answer_camera_faces.png)
 
+## 人脸认证页面
+### 微笑识别/眨眼识别
+>通过某种动作进行活体验证<_<
+
+
+## 人脸查找页面
+### *Faster and More concise!*
+>只检测您需要查找的人脸<_<
+
+![tfsearch](resources/4.png)![tfsearch](resources/5.png)
 * *Thanks for reading!*
-* *TO BE CONTINUED*

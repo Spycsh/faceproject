@@ -32,7 +32,13 @@ def search(img_path, labels_list, threshold=0.5, answer_pic=False):
         path = '../default_search_labels/{}.jpg'.format(f)
         # print("Processing file:{}".format(path))
         # 加载标签图片
-        img = io.imread(path)
+        try:
+            img = io.imread(path)
+        except FileNotFoundError as e:
+            print('标签类型不是jpg,更换为png')
+            path = '../default_search_labels/{}.png'.format(f)
+            img = io.imread(path)
+
 
         # The 1 in the second argument indicates that we should upsample the image
         # 1 time.  This will make everything bigger and allow us to detect more
@@ -99,8 +105,8 @@ def search(img_path, labels_list, threshold=0.5, answer_pic=False):
         print(cd_sorted)
     # 返回信息
     # 若dist小于0.4则识别成功，大于则查无此人
-        print(cd_sorted[0][1])
-        print(threshold)
+    #     print(cd_sorted[0][1])
+    #     print(threshold)
         if cd_sorted[0][1] < threshold:
             answer.append(cd_sorted[0][0])  # 查到的人名
             # print(d)

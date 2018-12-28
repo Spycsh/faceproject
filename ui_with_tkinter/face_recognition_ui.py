@@ -24,7 +24,7 @@ class FaceRecognition:
 
         self.menuBar.add_command(label='Predict', font=('Times New Roman', 8), command=self.enable_test_ui)
         self.menuBar.add_command(label='Identification', font=('Time New Roman', 8), command=self.enable_identification_ui)
-        self.menuBar.add_command(label='search', font=('Time New Roman', 8), command=self.enable_search_ui)
+        self.menuBar.add_command(label='Search', font=('Time New Roman', 8), command=self.enable_search_ui)
 # 变量设置
 
         self.enable_test = False
@@ -96,7 +96,7 @@ class FaceRecognition:
 
         if self.enable_test is False and self.enable_identification is False:
             self.canvas = Canvas(self.root, width=1000, height=600)                     # 设置canvas
-            self.image = Image.open('../resources/Entrance.jpg').resize((1000, 600))      # 打开图片调整大小
+            self.image = Image.open('../resources/Entrance.png').resize((1000, 600))      # 打开图片调整大小
             self.canvas.image = ImageTk.PhotoImage(self.image)                          # 图片附着到canvas的图片上
             self.canvas.create_image(0, 0, image=self.canvas.image, anchor='nw')
             self.canvas.place(x=0, y=0)

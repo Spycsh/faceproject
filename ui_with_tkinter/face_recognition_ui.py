@@ -90,8 +90,6 @@ class FaceRecognition:
         # images list
         self.display = []
 
-
-
 # 主界面插入图片
 
         if self.enable_test is False and self.enable_identification is False:
@@ -137,15 +135,18 @@ class FaceRecognition:
         if self.image_path_var.get() == '':
             self.image_path_var.set('')
 # image 路径
-        self.choose_path_widgets.append(Label(self.root, text='path of the image', font=('Times New Roman',12), fg='blue'))
-        self.choose_path_widgets[-1].place(x=10, y=55)
-
-        self.choose_path_widgets.append(Button(self.root, text='Choose', font=('Times New Roman', 12), command=self.choose_file))
-        self.choose_path_widgets[-1].place(x=400, y=51)
-
-        self.choose_path_widgets.append(
-            Entry(self.root, width=56, textvariable=self.image_path_var, font=('Times New Roman', 12)))
-        self.choose_path_widgets[-1].place(x=10, y=85)
+        self.create_choose_image_path_ui()
+        # self.choose_path_widgets.append(Label(self.root, text='path of the image', font=('Times New Roman',12),
+        # fg='blue'))
+        # self.choose_path_widgets[-1].place(x=10, y=55)
+        #
+        # self.choose_path_widgets.append(Button(self.root, text='Choose', font=('Times New Roman', 12), command=self
+        # .choose_file))
+        # self.choose_path_widgets[-1].place(x=400, y=51)
+        #
+        # self.choose_path_widgets.append(
+        #     Entry(self.root, width=56, textvariable=self.image_path_var, font=('Times New Roman', 12)))
+        # self.choose_path_widgets[-1].place(x=10, y=85)
         # print(self.choose_path_widgets)
         if self.test_state_var.get() == '':
             self.test_state_var.set('recognition')
@@ -166,7 +167,6 @@ class FaceRecognition:
                 self.show_image(self.test_image_path, size=(500, 500), x=500, y=40)
             else:
                 self.show_image(self.test_image_path, size=(500, 500), x=500, y=40)
-
 
         # if self.fit_data_var.get() == '':
         #     self.fit_data_var.set(FALSE)
@@ -273,7 +273,6 @@ class FaceRecognition:
         self.search_labels_box_x_scrollbar.config(command=self.search_labels_box.xview)
         self.search_labels_box_y_scrollbar.config(command=self.search_labels_box.yview)
 
-
         Button(self.root, text='选择', font=('楷体', 12), fg='blue', command=self.on_choose).place(x=150, y=80)
         self.search_labels_box.bind('<ButtonRelease-1>', self.mouse_update_choose)
 
@@ -330,7 +329,6 @@ class FaceRecognition:
             del self.choose_labels[self.choose_labels.index(self.delete_label_var.get())]
         self.insert_labels(self.search_targets_box, self.choose_labels)
 
-
     def choose_state(self):
         self.test_state = self.test_state_var.get()
         # if self.test_state == 'recognition':
@@ -345,8 +343,7 @@ class FaceRecognition:
             self.create_choose_image_path_ui()
             # self.show_image(self.test_image_path, size=(500, 500), x=500, y=40)
         elif self.test_state_var.get() == 'camera recognition':
-            print(1)
-            print(self.choose_path_widgets)
+            # print(self.choose_path_widgets)
             self.destroy_choose_image_path_ui()
 
             # self.show_image(self.test_image_path, size=(500, 500), x=500, y=40)
@@ -372,10 +369,8 @@ class FaceRecognition:
         for widget in self.choose_path_widgets:
             widget.destroy()
 
-
     def choose_state_identify(self):
         self.identification_state = self.identification_state_var.get()
-
 
     def choose_file(self):
         temp_path = askopenfilename()
@@ -411,7 +406,6 @@ class FaceRecognition:
         for pic in os.listdir(r'..\default_search_labels'):
             picname = pic.split(".")[0]
             self.search_labels_box.insert(END, picname)
-
 
     def choose_folder(self):
         temp_path = askdirectory()
@@ -456,7 +450,6 @@ class FaceRecognition:
         self.test_parameters.insert(10, 'If the parameters are correct, click the \'Start\' button!')
         self.test_parameters.itemconfig(9, fg='red')
         self.test_parameters.itemconfig(10, fg='red')
-
 
     def show_image(self, image_path, size, x, y):
         image = Image.open(image_path)

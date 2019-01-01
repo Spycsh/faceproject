@@ -1,9 +1,6 @@
-import dlib                     # 人脸识别的库dlib
-import numpy as np              # 数据处理的库numpy
 import cv2                      # 图像处理的库OpenCv
 from skimage import io
-import os, dlib, glob, numpy
-from tkinter import messagebox as mb
+import dlib, numpy
 
 
 def search(img_path, labels_list, threshold=0.5, answer_pic=False):
@@ -38,7 +35,6 @@ def search(img_path, labels_list, threshold=0.5, answer_pic=False):
             print('标签类型不是jpg,更换为png')
             path = '../default_search_labels/{}.png'.format(f)
             img = io.imread(path)
-
 
         # The 1 in the second argument indicates that we should upsample the image
         # 1 time.  This will make everything bigger and allow us to detect more
@@ -113,7 +109,7 @@ def search(img_path, labels_list, threshold=0.5, answer_pic=False):
             # print(type(d))
             # 使用opencv在原图上画出人脸位置
             # 显示结果图
-            if answer_pic == True:
+            if answer_pic == True:    # 得到结果图
                 left_top = (dlib.rectangle.left(d), dlib.rectangle.top(d))
                 right_bottom = (dlib.rectangle.right(d), dlib.rectangle.bottom(d))
                 left_top_bottom = (dlib.rectangle.left(d), dlib.rectangle.bottom(d))  # 作为解释文字的左上坐标
@@ -126,18 +122,14 @@ def search(img_path, labels_list, threshold=0.5, answer_pic=False):
                 cv2.putText(img, cd_sorted[0][0], left_top_bottom, cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 2)
                 cv2.imshow("img", cv2.cvtColor(img, cv2.COLOR_RGB2BGR))  # 转成ＢＧＲ显示
 
-
     # if cd_sorted[0][1] > 0.4:
     #     answer = "Cannot find a person in the label database!"
     # else:
     #     answer = "The person is:"+cd_sorted[0][0]
     #     print("\n The person is:", cd_sorted[0][0])
-
     # if answer is not None:
     #     answer.show_information()
-
     # dlib.hit_enter_to_continue()
-
 
     if len(answer) == 0:
         answer = "没有匹配！"

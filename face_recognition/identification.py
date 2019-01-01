@@ -1,4 +1,3 @@
-import dlib                     # 人脸识别的库dlib
 import numpy as np              # 数据处理的库numpy
 import cv2                      # 图像处理的库OpenCv
 from skimage import io
@@ -68,7 +67,7 @@ def identify(identification_state):
                     cv2.imwrite(path_save, im_blank)
                     # 有匹配显示人脸名，没匹配就返回空
                     # faces_folder_path='../default_picture_labels'
-                    flag = compare(path_save, predictor , detector, facerec, faces_folder_path='../default_label_identification/' )
+                    flag = compare(path_save, predictor, detector, facerec, faces_folder_path='../default_label_identification/' )
                     if not flag:
                         print(flag)
                         cap.release()
@@ -77,7 +76,6 @@ def identify(identification_state):
                     # flag[0]代表人名
                     cv2.putText(im_rd, flag[0], (d.left(), d.bottom() + 20), cv2.FONT_HERSHEY_SIMPLEX, 0.8,
                                 (0, 0, 255), 2, 4)
-
 
                     # 用红色矩形框出人脸
                     cv2.rectangle(im_rd, (d.left(), d.top()), (d.right(), d.bottom()), (0, 0, 255))
@@ -122,8 +120,6 @@ def identify(identification_state):
                             cv2.destroyAllWindows()
                             return{'name': flag[0], 'identification': "success"}
 
-
-
                     # 分情况讨论
                     # 张嘴，可能是开心或者惊讶
                     # if round(mouth_higth >= 0.03):
@@ -161,7 +157,6 @@ def identify(identification_state):
 
     # 删除建立的窗口
     cv2.destroyAllWindows()
-
 
 
 def compare(path_save,predictor,detector, facerec, faces_folder_path):

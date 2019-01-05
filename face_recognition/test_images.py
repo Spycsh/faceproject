@@ -237,6 +237,3 @@ def camera_recognition(test_folder_path='../default_picture_labels'):
     return answer
     # cv2.waitKey(0)
     # cv2.destroyALLWindows()
-
-# 是否要返回处理后的图片？待实现
-# 高级模式：通过矩阵比较两个人之间的相似度，需要写入csv文件，undone

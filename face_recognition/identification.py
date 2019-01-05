@@ -105,7 +105,6 @@ def identify(identification_state):
                                    shape.part(39).y - shape.part(38).y +
                                    shape.part(47).y - shape.part(42).y + shape.part(46).y - shape.part(43).y +
                                    shape.part(45).y - shape.part(44).y)
-    # return
                         if eye_sum < 30:
                             cap.release()
                             cv2.destroyAllWindows()

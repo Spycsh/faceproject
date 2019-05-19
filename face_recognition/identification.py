@@ -223,7 +223,7 @@ def compare(path_save,predictor,detector, facerec, faces_folder_path):
         print(cd_sorted)
     # 返回信息
     # 若dist小于0.4则识别成功，大于则查无此人
-        if cd_sorted[0][1] < 0.4:
+        if cd_sorted[0][1] < 0.5:
             answer.append(cd_sorted[0][0])  # 查到的人名
             print("find!")
             return answer

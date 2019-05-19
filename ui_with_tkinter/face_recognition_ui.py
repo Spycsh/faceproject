@@ -101,7 +101,6 @@ class FaceRecognition:
 
         self.root.mainloop()
 
-
     def enable_test_ui(self):
         if self.enable_test:
             mb.showwarning('Warnining', 'The current ui is predict interface!')
@@ -129,6 +128,7 @@ class FaceRecognition:
 
 # 进入test ui
     def create_test_ui(self):
+
         self.enable_identification = False
         self.enable_search = False
 
@@ -218,6 +218,9 @@ class FaceRecognition:
         self.answer_x_scrollbar.config(command=self.answer_box.xview)
         self.answer_y_scrollbar.config(command=self.answer_box.yview)
 
+        if(self.test_state == "camera recognition"):
+            self.destroy_choose_image_path_ui()
+            
         # parameter box添加参数描述
         self.insert_all_test_parameters()
 

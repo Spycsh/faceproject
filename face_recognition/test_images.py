@@ -233,7 +233,7 @@ def camera_recognition(test_folder_path='../default_picture_labels'):
     # 删除窗口
     # 这里用数据库识别
     answer = recognition(path_save + "img_face_" + str(cnt_p) + ".jpg", test_folder_path=test_folder_path,
-                         threshold=0.5, answer_pic=True)
+                         threshold=0.6, answer_pic=True)
     return answer
     # cv2.waitKey(0)
     # cv2.destroyALLWindows()

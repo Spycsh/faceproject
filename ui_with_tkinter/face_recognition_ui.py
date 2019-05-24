@@ -13,7 +13,7 @@ import os
 class FaceRecognition:
     def __init__(self):
         self.root = Tk()
-        self.root.title('人脸识别系统 作者：陈思瀚')
+        self.root.title('Face Recognition Author: Chen Sihan')
         self.root.maxsize(width=1000, height=600)
         self.root.minsize(width=1000, height=600)
         self.root.protocol("WM_DELETE_WINDOW", self.on_exit)
@@ -22,10 +22,9 @@ class FaceRecognition:
         self.root.config(menu=self.menuBar)  # 创建前先要实例化菜单
         self.help_menu = Menu(self.menuBar)
 
-        self.menuBar.add_command(label='Predict', font=('Times New Roman', 8), command=self.enable_test_ui)
+        self.menuBar.add_command(label='Predict', font=('Times New Roman', 8), command=self.enable_prediction_ui)
         self.menuBar.add_command(label='Identification', font=('Time New Roman', 8), command=self.enable_identification_ui)
         self.menuBar.add_command(label='Search', font=('Time New Roman', 8), command=self.enable_search_ui)
-# 变量设置
 
         self.enable_test = False
         self.enable_identification = False
@@ -43,14 +42,12 @@ class FaceRecognition:
         self.search_image_path = None
         self.search_image_path_var = StringVar()
 
-        #
         self.test_folder_path = None
         self.image_folder_path_var = StringVar()
 
         self.test_state = 'recognition'
         self.test_state_var = StringVar()
 
-        #
         self.identification_state = 'eye identification'
         self.identification_state_var = StringVar()
 
@@ -101,7 +98,7 @@ class FaceRecognition:
 
         self.root.mainloop()
 
-    def enable_test_ui(self):
+    def enable_prediction_ui(self):
         if self.enable_test:
             mb.showwarning('Warnining', 'The current ui is predict interface!')
 
@@ -153,12 +150,12 @@ class FaceRecognition:
         # if self.test_state_var.get() != 'recognition':
         #     self.create_choose_label_ui()
 # 选择功能
-        Label(self.root, text='模式', font=('楷体', 12), fg='blue').place(x=10, y=10)
-        # Checkbutton(self.root, text='人脸验证', font=('楷体', 12), variable=self.test_state_var,
+        Label(self.root, text='Mode', font=('Times New Roman', 12), fg='blue').place(x=10, y=10)
+        # Checkbutton(self.root, text='人脸验证', font=('Times New Roman', 12), variable=self.test_state_var,
         #             onvalue='verification', offvalue=0, command=self.choose_state).place(x=10, y=115)
-        Checkbutton(self.root, text='recognition', font=('楷体', 12), variable=self.test_state_var,
+        Checkbutton(self.root, text='recognition', font=('Times New Roman', 12), variable=self.test_state_var,
                     onvalue='recognition', offvalue=0, command=self.choose_state).place(x=10, y=30)
-        Checkbutton(self.root, text='camera recognition', font=('楷体', 12), variable=self.test_state_var,
+        Checkbutton(self.root, text='camera recognition', font=('Times New Roman', 12), variable=self.test_state_var,
                     onvalue='camera recognition', offvalue=0, command=self.choose_state).place(x=300, y=30)
 
         if self.image_path_var.get() != '':
@@ -220,7 +217,7 @@ class FaceRecognition:
 
         if(self.test_state == "camera recognition"):
             self.destroy_choose_image_path_ui()
-            
+
         # parameter box添加参数描述
         self.insert_all_test_parameters()
 
@@ -231,11 +228,11 @@ class FaceRecognition:
         if self.identification_state_var.get() == '':
             self.identification_state_var.set(' ')
 
-        Label(self.root, text='模式', font=('楷体', 12), fg='blue').place(x=10, y=10)
-        Checkbutton(self.root, text='眨眼验证', font=('楷体', 12), variable=self.identification_state_var,
+        Label(self.root, text='Mode', font=('Times New Roman', 12), fg='blue').place(x=10, y=10)
+        Checkbutton(self.root, text='Identification by blinking', font=('Times New Roman', 12), variable=self.identification_state_var,
                     onvalue='eye identification', offvalue=0, command=self.choose_state_identify).place(x=10, y=40)
-        Checkbutton(self.root, text='微笑验证', font=('楷体', 12), variable=self.identification_state_var,
-                    onvalue='smile identification', offvalue=0, command=self.choose_state_identify).place(x=400, y=40)
+        Checkbutton(self.root, text='Identification by smiling', font=('Times New Roman', 12), variable=self.identification_state_var,
+                    onvalue='smile identification', offvalue=0, command=self.choose_state_identify).place(x=350, y=40)
 
         Button(self.root, text='Start', font=('Times New Roman', 12), fg='DarkMagenta',
                command=self.start_identify).place(x=200, y=100)
@@ -254,7 +251,6 @@ class FaceRecognition:
         self.identification_x_scrollbar.config(command=self.identification_answer_box.xview)
         self.identification_y_scrollbar.config(command=self.identification_answer_box.yview)
 
-###
     def create_search_ui(self):
         self.enable_test = False
         self.enable_identification = False
@@ -262,10 +258,10 @@ class FaceRecognition:
         Button(self.root, text='Choose', font=('Times New Roman', 12), command=self.choose_search_file).place(x=400, y=5)
         Entry(self.root, width=56, textvariable=self.search_image_path_var, font=('Times New Roman', 12)).place(x=10, y=40)
 
-        Label(self.root, text='标签数据库', font=('楷体', 12), fg='blue').place(x=10, y=80)
-        Button(self.root, text='更新', font=('楷体', 12), fg='blue', command=self.update_search_labels).place(x=100, y=80)
-        self.search_labels_box = Listbox(self.root, font=('楷体', 12), width=26, height=15)
-        self.search_labels_box.place(x=10, y=110)
+        Label(self.root, text='All labels', font=('Times New Roman', 12), fg='blue').place(x=10, y=80)
+        Button(self.root, text='Flush', font=('Times New Roman', 12), fg='blue', command=self.update_search_labels).place(x=90, y=75)
+        self.search_labels_box = Listbox(self.root, font=('Times New Roman', 12), width=26, height=12)
+        self.search_labels_box.place(x=10, y=120)
 
         self.search_labels_box_x_scrollbar = Scrollbar(self.root, orient=HORIZONTAL)
         self.search_labels_box_y_scrollbar = Scrollbar(self.root)
@@ -276,18 +272,17 @@ class FaceRecognition:
         self.search_labels_box_x_scrollbar.config(command=self.search_labels_box.xview)
         self.search_labels_box_y_scrollbar.config(command=self.search_labels_box.yview)
 
-        Button(self.root, text='选择', font=('楷体', 12), fg='blue', command=self.on_choose).place(x=150, y=80)
+        Button(self.root, text='Choose', font=('Times New Roman', 12), fg='blue', command=self.on_choose).place(x=150, y=75)
         self.search_labels_box.bind('<ButtonRelease-1>', self.mouse_update_choose)
 
-        Label(self.root, text='检测人名', font=('楷体', 12), fg='blue').place(x=250, y=80)
-        Button(self.root, text='删除', font=('楷体', 12), fg='blue', command=self.on_delete).place(x=340, y=80)
-        self.search_targets_box = Listbox(self.root, font=('楷体', 12), width=26, height=15)
-        self.search_targets_box.place(x=250, y=110)
+        Label(self.root, text='Target labels', font=('Times New Roman', 12), fg='blue').place(x=250, y=80)
+        Button(self.root, text='Delete', font=('Times New Roman', 12), fg='blue', command=self.on_delete).place(x=340, y=75)
+        self.search_targets_box = Listbox(self.root, font=('Times New Roman', 12), width=26, height=12)
+        self.search_targets_box.place(x=250, y=120)
 
         self.search_targets_box.bind('<ButtonRelease-1>', self.mouse_update_delete)
-        # 滚动条待完成
 
-        Button(self.root, text='开始', font=('楷体', 12), fg='blue', command=self.start_search).place(x=210, y=390)
+        Button(self.root, text='Start', font=('Times New Roman', 12), fg='blue', command=self.start_search).place(x=210, y=390)
 
         Label(self.root, text='Prediction', font=('Times New Roman', 12), fg='blue').place(x=200, y=417)
 

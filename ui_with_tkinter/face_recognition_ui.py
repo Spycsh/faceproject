@@ -91,7 +91,7 @@ class FaceRecognition:
 
         if self.enable_test is False and self.enable_identification is False:
             self.canvas = Canvas(self.root, width=1000, height=600)                     # 设置canvas
-            self.image = Image.open('../resources/Entrance.png').resize((1000, 600))      # 打开图片调整大小
+            self.image = Image.open('../resources/Entrance_EnglishVersion.jpg').resize((1000, 600))      # 打开图片调整大小
             self.canvas.image = ImageTk.PhotoImage(self.image)                          # 图片附着到canvas的图片上
             self.canvas.create_image(0, 0, image=self.canvas.image, anchor='nw')
             self.canvas.place(x=0, y=0)
@@ -319,7 +319,7 @@ class FaceRecognition:
         if self.choose_label_var.get() not in self.choose_labels:
             self.choose_labels.append(self.choose_label_var.get())
         else:
-            mb.showinfo('Info', '标签已经选中！')
+            mb.showinfo('Info', 'Label already chooses！')
         self.insert_labels(self.search_targets_box, self.choose_labels)
 
     def on_delete(self):
@@ -403,7 +403,8 @@ class FaceRecognition:
         self.search_labels_box.delete(0, END)
         for pic in os.listdir(r'..\default_search_labels'):
             picname = pic.split(".")[0]
-            self.search_labels_box.insert(END, picname)
+            if picname != "README":
+                self.search_labels_box.insert(END, picname)
 
     def choose_folder(self):
         temp_path = askdirectory()

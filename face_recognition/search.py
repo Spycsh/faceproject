@@ -132,8 +132,11 @@ def search(img_path, labels_list, threshold=0.5, answer_pic=False):
     # dlib.hit_enter_to_continue()
 
     if len(answer) == 0:
-        answer = "没有匹配！"
+        answer = "No Match"
     else:
-        answer = '检测到' + str(len(answer)) + '人:' + ','.join(answer)
+        if len(answer) == 1:
+            answer = '1 person found: ' + ''.join(answer)
+        else:
+            answer = str(len(answer)) + ' persons found: ' + ','.join(answer)
     print(answer)
     return answer

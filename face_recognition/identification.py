@@ -161,7 +161,8 @@ def identify(identification_state):
 def compare(path_save,predictor,detector, facerec, faces_folder_path):
     descriptors = []
     # 加载标签图片
-    for f in glob.glob(os.path.join(faces_folder_path + '\/*')):
+
+    for f in glob.glob(os.path.join(faces_folder_path + '*.*g')):
         print("Processing file:{}".format(f))
         img = io.imread(f)
         # The 1 in the second argument indicates that we should upsample the image
@@ -207,6 +208,8 @@ def compare(path_save,predictor,detector, facerec, faces_folder_path):
         list_picture_labels = os.listdir(faces_folder_path)
         candidate = []
         for i in list_picture_labels:
+            if i[-3:] in ['.md']:
+                continue
             if i[-4:] in ['.jpg', '.JPG', '.PNG', '.png']:
                 candidate.append(i[:-4])
             else:

@@ -27,7 +27,11 @@ def recognition(img_path, test_folder_path='../default_picture_labels',threshold
 
     descriptors = []
 
-    for f in glob.glob(os.path.join(test_folder_path, "*.jpg")):
+    # 粗略匹配png和jpg文件
+    all_labels = glob.glob(os.path.join(test_folder_path, "*.*g"))
+    print(all_labels)
+
+    for f in all_labels:
         print("Processing file:{}".format(f))
         # 加载标签图片
         img = io.imread(f)
@@ -79,10 +83,13 @@ def recognition(img_path, test_folder_path='../default_picture_labels',threshold
     list_picture_labels = os.listdir(test_folder_path)
     candidate = []
     for i in list_picture_labels:
+        if i[-3:] in ['.md']:
+            continue
         if i[-4:] in ['.jpg', '.JPG', '.PNG', '.png']:
             candidate.append(i[:-4])
         else:
             mb.showwarning('warning', "file invalid!")
+            print(i)
     # candidate=['xinyuanjieyi','qiaobenhuannai','shiyuanlimei','fengtimo']
     c_d = [{}] * len(dets)
     answer = []
@@ -127,9 +134,12 @@ def recognition(img_path, test_folder_path='../default_picture_labels',threshold
     # dlib.hit_enter_to_continue()
 
     if len(answer) == 0:
-        answer = "没有匹配！"
+        answer = "No Match！"
     else:
-        answer = '检测到' + str(len(answer)) + '人:' + ','.join(answer)
+        if len(answer) == 1:
+            answer = str(len(answer)) + ' person detected!: ' + ','.join(answer)
+        else:
+            answer = str(len(answer)) + ' persons detected!: ' + ','.join(answer)
     return answer
 
 
@@ -182,7 +192,7 @@ def camera_recognition(test_folder_path='../default_picture_labels'):
             if kk == ord('s'):
                 cnt_p += 1
                 cv2.imwrite(path_save + "img_face_" + str(cnt_p) + ".jpg", frame)
-                print("写入本地：", path_save + "img_face_" + str(cnt_p) + ".jpg")
+                print("Write to local：", path_save + "img_face_" + str(cnt_p) + ".jpg")
             # 矩形框
             for k, d in enumerate(rects):
                 # 计算矩形大小

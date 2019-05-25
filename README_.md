@@ -1,50 +1,53 @@
-# *Face Recognition Software*
+# **Face Recognition Software**
 
 ## *GUI implementation*
 
+> Author: Sihan Chen
+
 ---
-## Project structure
+## **Project structure**
 
 ```
++--ui_with_tkinter
+|    +--face_recognition_ui.py
+|    +--__init__.py
+
++--resources
+|    +--dlib_face_recognition_resnet_model_v1.dat
+|    +--Entrance.png
+|    +--Entrance_EnglishVersion.jpg
+|    +--shape_predictor_68_face_landmarks.dat
+
 +--face_recognition
 |    +--identification.py
 |    +--README.md
 |    +--search.py
 |    +--test_images.py
 |    +--__init__.py
-+--ui_with_tkinter
-|    +--face_recognition_ui.py
-|    +--__init__.py
-+--resources
-|    +--dlib_face_recognition_resnet_model_v1.dat
-|    +--Entrance.png
-|    +--Entrance_EnglishVersion.jpg
-|    +--shape_predictor_68_face_landmarks.dat
+
 +--camera_photo
 |    +--README.md
+
 +--camera_photo_identification
 |    +--README.md
+
 +--default_label_identification
 |    +--chensihan.JPG
 |    +--README.md
 +--default_picture_labels
-|    +--ChenSihan.jpg
+|    +--csh.jpg
 |    +--kobe.jpg
 |    +--README.md
+
 +--default_search_labels
-|    +--AndreIguodala.jpg
+|    +--ChenGuanyu.png
 |    +--ChenSihan.JPG
-|    +--Curry.jpg
-|    +--kobe.jpg
-|    +--LiZongdi.jpg
-|    +--NickYoung.jpg
 |    +--Obama.jpg
 |    +--README.md
-|    +--ShaoYifan.jpg
 |    +--TangYixin.jpg
-|    +--thompson.jpg
+|    +--Trump.jpg
 |    +--ZhangRuoyun.jpg
-+--README.md
+
 ```
 
 ## **Entrance interface**

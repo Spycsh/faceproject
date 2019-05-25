@@ -1,9 +1,11 @@
-# *Face Recognition Software*
+# **Face Recognition Software**
 
 ## *GUI implementation*
 
+> Author: Sihan Chen
+
 ---
-## Project structure
+## **Project structure**
 
 ```
 +--face_recognition

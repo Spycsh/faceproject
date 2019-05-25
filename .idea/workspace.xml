@@ -3,55 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="465bdea0-58d9-40b1-9bde-c4ebde09ef8e" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/camera_photo/img_face_1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/camera_photo/img_face_2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/camera_photo_identification/img_face_.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/default_label_identification/xinyuanjieyi.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/default_picture_labels/ChenZidi.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/default_picture_labels/csh.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/default_picture_labels/csh_glass.JPG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/default_picture_labels/csh_noglass.JPG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/default_picture_labels/dama.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/default_picture_labels/kobe.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/default_picture_labels/kobe.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/default_picture_labels/sample1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/default_picture_labels/shiyuanlimei.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/default_picture_labels/tangyixin.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/default_picture_labels/wangjunkai.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/default_picture_labels/wangyiqi.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/default_picture_labels/wangyuan.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/default_picture_labels/xinyuanjieyi.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/default_picture_labels/yiyangqianxi.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/default_picture_labels/zhangruoyun.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/default_search_labels/666.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/default_search_labels/chenguanyu.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/default_search_labels/obama.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/default_search_labels/obama.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/default_search_labels/shiyuanlimei.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/default_search_labels/test.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/default_search_labels/trump.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/default_search_labels/wangjunkai.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/default_search_labels/wangxiaocheng.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/default_search_labels/wangyiqi.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/default_search_labels/wangyuan.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/default_search_labels/xinyuanjieyi.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/default_search_labels/yiyangqianxi.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/face_recognition/README" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/face_recognition/identification.py" beforeDir="false" afterPath="$PROJECT_DIR$/face_recognition/identification.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/face_recognition/search.py" beforeDir="false" afterPath="$PROJECT_DIR$/face_recognition/search.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/face_recognition/test_images.py" beforeDir="false" afterPath="$PROJECT_DIR$/face_recognition/test_images.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/answer_camera_faces.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/answer_pic1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/answer_pic2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/emotions.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/search_answer.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/search_ui.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/ui.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui_with_tkinter/face_recognition_ui.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui_with_tkinter/face_recognition_ui.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -116,12 +67,17 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="225">
-                <caret line="21" column="45" lean-forward="true" selection-start-line="21" selection-start-column="45" selection-end-line="21" selection-end-column="45" />
+              <first_editor relative-caret-position="45">
+                <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
               </first_editor>
               <second_editor />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/face_recognition/__init__.py">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
@@ -184,27 +140,27 @@
       <find>search_image_path</find>
       <find>start</find>
       <find>cnt_p</find>
-      <find>camera recognition</find>
+      <find />
       <find>answer_pic</find>
       <find>print</find>
-      <find>Number of faces detected</find>
+      <find />
       <find>random</find>
       <find>camera_recognition</find>
       <find>楷体</find>
       <find>模式</find>
       <find>identifi</find>
-      <find>identification by</find>
+      <find />
       <find>proce</find>
       <find>检测</find>
       <find>glob</find>
       <find>glob(</find>
       <find>file</find>
-      <find>file in</find>
-      <find>all lab</find>
+      <find />
+      <find />
     </findStrings>
     <replaceStrings>
       <replace>predictor</replace>
-      <replace>Times New Roman</replace>
+      <replace />
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -490,13 +446,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../人脸识别实例/emotion_face/camera_detect_emotion.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="10" selection-start-line="3" selection-start-column="10" selection-end-line="3" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/default_picture_labels/dama.jpg" />
     <entry file="file://$PROJECT_DIR$/camera_photo/img_face_1.jpg" />
     <entry file="file://$PROJECT_DIR$/camera_photo/img_face_2.jpg" />
@@ -693,11 +642,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/face_recognition/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="225">
-            <caret line="21" column="45" lean-forward="true" selection-start-line="21" selection-start-column="45" selection-end-line="21" selection-end-column="45" />
+          <first_editor relative-caret-position="45">
+            <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
           </first_editor>
           <second_editor />
         </state>

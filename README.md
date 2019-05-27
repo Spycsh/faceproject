@@ -1,6 +1,6 @@
 # **Face Recognition Software**
 
-## *GUI implementation*
+## **GUI implementation**
 
 > Author: Sihan Chen
 
@@ -26,7 +26,7 @@
 |    +--README.md
 +--camera_photo_identification
 |    +--README.md
-+--default_label_identification
++--default_label_identificationcd 
 |    +--chensihan.JPG
 |    +--README.md
 +--default_picture_labels

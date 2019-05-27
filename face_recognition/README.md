@@ -1,3 +1,5 @@
+* win x64-based PC
+
 * language:
     python
 

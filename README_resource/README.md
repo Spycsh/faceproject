@@ -1,0 +1,1 @@
+This folder saves the resources of the README of the WHOLE PROJECT

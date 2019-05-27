@@ -1,0 +1,1 @@
+this folder saves the resources of THE PROJECT

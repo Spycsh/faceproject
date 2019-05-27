@@ -2,7 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="465bdea0-58d9-40b1-9bde-c4ebde09ef8e" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/README_resource/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui_with_tkinter/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/camera_photo/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/camera_photo/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/camera_photo_identification/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/camera_photo_identification/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/default_label_identification/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/default_label_identification/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/default_picture_labels/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/default_picture_labels/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/default_search_labels/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/default_search_labels/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/face_recognition/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/face_recognition/README.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -13,104 +23,121 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="face_recognition_ui.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ui_with_tkinter/face_recognition_ui.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="178">
-              <caret line="452" column="49" selection-start-line="452" selection-start-column="49" selection-end-line="452" selection-end-column="49" />
-              <folding>
-                <element signature="e#0#21#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Image.py" pinned="false" current-in-tab="false">
-        <entry file="file://C:/Program Files/Anaconda3/Lib/site-packages/PIL/Image.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="2311" selection-start-line="2311" selection-end-line="2311" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ui_with_tkinter/__init__.py">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
       <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/default_picture_labels/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
               <first_editor relative-caret-position="135">
-                <caret line="9" column="30" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
+                <caret line="9" column="62" selection-start-line="9" selection-start-column="62" selection-end-line="9" selection-end-column="62" />
               </first_editor>
               <second_editor />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="print_directory_structure.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../print_directory_structure.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
-              <folding>
-                <element signature="e#0#9#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/README.md">
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/camera_photo/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="45">
-                <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+              <first_editor relative-caret-position="30">
+                <caret line="2" selection-start-line="2" selection-end-line="2" selection-end-column="62" />
               </first_editor>
               <second_editor />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/face_recognition/__init__.py">
-          <provider selected="true" editor-type-id="text-editor" />
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/camera_photo_identification/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="135">
+                <caret line="9" column="62" selection-start-line="9" selection-start-column="62" selection-end-line="9" selection-end-column="62" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/default_label_identification/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="135">
+                <caret line="9" column="62" selection-start-line="9" selection-start-column="62" selection-end-line="9" selection-end-column="62" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
         </entry>
       </file>
       <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/default_search_labels/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="150">
-                <caret line="10" selection-start-line="10" selection-end-line="10" />
+              <first_editor relative-caret-position="135">
+                <caret line="9" column="62" selection-start-line="9" selection-start-column="62" selection-end-line="9" selection-end-column="62" />
               </first_editor>
               <second_editor />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="identification.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/face_recognition/identification.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="145">
-              <caret line="209" column="37" lean-forward="true" selection-start-line="209" selection-start-column="37" selection-end-line="209" selection-end-column="37" />
-              <folding>
-                <element signature="e#0#45#0" expanded="true" />
-              </folding>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/face_recognition/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor>
+                <caret column="6" selection-start-column="6" selection-end-column="6" />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test_images.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/face_recognition/test_images.py">
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/README_resource/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor>
+                <caret column="66" selection-start-column="66" selection-end-column="66" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor>
+                <caret column="46" lean-forward="true" selection-start-column="46" selection-end-column="46" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ui_with_tkinter/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor>
+                <caret column="15" lean-forward="true" selection-start-column="15" selection-end-column="15" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="face_recognition_ui.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ui_with_tkinter/face_recognition_ui.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="103">
-              <caret line="85" column="8" selection-start-line="85" selection-start-column="8" selection-end-line="86" selection-end-column="20" />
+            <state relative-caret-position="6780">
+              <caret line="452" column="49" selection-start-line="452" selection-start-column="49" selection-end-line="452" selection-end-column="49" />
               <folding>
-                <element signature="e#0#10#0" expanded="true" />
+                <element signature="e#0#21#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -140,27 +167,27 @@
       <find>search_image_path</find>
       <find>start</find>
       <find>cnt_p</find>
-      <find />
+      <find>camera recognition</find>
       <find>answer_pic</find>
       <find>print</find>
-      <find />
+      <find>Number of faces detected</find>
       <find>random</find>
       <find>camera_recognition</find>
       <find>楷体</find>
       <find>模式</find>
       <find>identifi</find>
-      <find />
+      <find>identification by</find>
       <find>proce</find>
       <find>检测</find>
       <find>glob</find>
       <find>glob(</find>
       <find>file</find>
-      <find />
-      <find />
+      <find>file in</find>
+      <find>all lab</find>
     </findStrings>
     <replaceStrings>
       <replace>predictor</replace>
-      <replace />
+      <replace>Times New Roman</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -172,18 +199,21 @@
         <option value="$PROJECT_DIR$/face_recognition.py" />
         <option value="$PROJECT_DIR$/face_recognition/README" />
         <option value="G:/2018chensihan/turtle/atest.py" />
-        <option value="$PROJECT_DIR$/camera_photo_identification/README.md" />
-        <option value="$PROJECT_DIR$/default_picture_labels/README.md" />
-        <option value="$PROJECT_DIR$/default_search_labels/README.md" />
-        <option value="$PROJECT_DIR$/camera_photo/README.md" />
-        <option value="$PROJECT_DIR$/default_label_identification/README.md" />
-        <option value="$PROJECT_DIR$/face_recognition/README.md" />
         <option value="$PROJECT_DIR$/face_recognition/test_images.py" />
         <option value="$PROJECT_DIR$/ui_with_tkinter/face_recognition_ui.py" />
         <option value="$PROJECT_DIR$/face_recognition/search.py" />
         <option value="$PROJECT_DIR$/face_recognition/identification.py" />
         <option value="$PROJECT_DIR$/README_.md" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/camera_photo/README.md" />
+        <option value="$PROJECT_DIR$/camera_photo_identification/README.md" />
+        <option value="$PROJECT_DIR$/default_label_identification/README.md" />
+        <option value="$PROJECT_DIR$/default_picture_labels/README.md" />
+        <option value="$PROJECT_DIR$/default_search_labels/README.md" />
+        <option value="$PROJECT_DIR$/face_recognition/README.md" />
+        <option value="$PROJECT_DIR$/README_resource/README.md" />
+        <option value="$PROJECT_DIR$/resources/README.md" />
+        <option value="$PROJECT_DIR$/ui_with_tkinter/README.md" />
       </list>
     </option>
   </component>
@@ -395,18 +425,18 @@
     <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21197917" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21197917" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="right" id="R Packages" order="3" />
       <window_info anchor="right" id="R Graphics" order="3" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50117093" side_tool="true" weight="0.23339318" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49882904" visible="true" weight="0.32969433" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Python Console" order="7" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49882904" weight="0.32969433" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.24980484" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32675046" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.60262007" />
       <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.60262007" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -416,9 +446,9 @@
       <window_info anchor="bottom" id="Find" order="1" weight="0.32854578" />
     </layout>
     <layout-to-restore>
-      <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19750196" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.24980484" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -426,15 +456,15 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="right" id="R Graphics" order="3" />
       <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49882904" visible="true" weight="0.23339318" />
+      <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="right" id="R Packages" order="4" />
-      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Python Console" order="8" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.44524238" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32675046" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50117093" side_tool="true" weight="0.23339318" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Message" order="0" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Python Console" order="8" />
     </layout-to-restore>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -446,12 +476,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/default_picture_labels/dama.jpg" />
-    <entry file="file://$PROJECT_DIR$/camera_photo/img_face_1.jpg" />
-    <entry file="file://$PROJECT_DIR$/camera_photo/img_face_2.jpg" />
-    <entry file="file://$PROJECT_DIR$/default_label_identification/chensihan.JPG">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://G:/2018chensihan/turtle/test.py" />
     <entry file="file://G:/2018chensihan/turtle/formal.py" />
     <entry file="file://G:/2018chensihan/turtle/atest.py" />
@@ -478,72 +502,20 @@
     <entry file="file://$PROJECT_DIR$/resources/Entrance_EnglishVersion2.jpg" />
     <entry file="file://$PROJECT_DIR$/default_picture_labels/sample1.jpg" />
     <entry file="file://$PROJECT_DIR$/default_picture_labels/shiyuanlimei.jpg" />
-    <entry file="file://$PROJECT_DIR$/default_picture_labels/tangyixin.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/default_picture_labels/wangjunkai.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/default_picture_labels/wangyiqi.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/default_picture_labels/wangyuan.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/default_picture_labels/tangyixin.jpg" />
+    <entry file="file://$PROJECT_DIR$/default_picture_labels/wangjunkai.jpg" />
+    <entry file="file://$PROJECT_DIR$/default_picture_labels/wangyiqi.jpg" />
+    <entry file="file://$PROJECT_DIR$/default_picture_labels/wangyuan.jpg" />
     <entry file="file://$PROJECT_DIR$/default_picture_labels/xinyuanjieyi.jpg" />
-    <entry file="file://$PROJECT_DIR$/default_picture_labels/yiyangqianxi.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/default_picture_labels/zhangruoyun.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/default_picture_labels/yiyangqianxi.jpg" />
+    <entry file="file://$PROJECT_DIR$/default_picture_labels/zhangruoyun.jpg" />
     <entry file="file://$PROJECT_DIR$/face_recognition/README" />
     <entry file="file://$PROJECT_DIR$/resources/5.png" />
     <entry file="file://$PROJECT_DIR$/resources/4.png" />
     <entry file="file://$PROJECT_DIR$/resources/2.png" />
     <entry file="file://$PROJECT_DIR$/resources/3.png" />
     <entry file="file://$PROJECT_DIR$/resources/1.png" />
-    <entry file="file://$PROJECT_DIR$/camera_photo/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor>
-            <caret column="31" selection-start-column="31" selection-end-column="31" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/default_label_identification/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="60">
-            <caret line="4" column="22" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/face_recognition/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="135">
-            <caret line="9" column="11" selection-start-line="9" selection-start-column="11" selection-end-line="9" selection-end-column="11" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/default_search_labels/666.jpg" />
-    <entry file="file://$PROJECT_DIR$/camera_photo_identification/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor>
-            <caret column="34" selection-start-column="34" selection-end-column="34" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../人脸草稿/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -556,32 +528,19 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="178">
           <caret line="112" column="41" selection-start-line="112" selection-start-column="41" selection-end-line="112" selection-end-column="41" />
-          <folding>
-            <element signature="e#0#46#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ui_with_tkinter/face_recognition_ui.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="452" column="49" selection-start-line="452" selection-start-column="49" selection-end-line="452" selection-end-column="49" />
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://C:/Program Files/Anaconda3/Lib/site-packages/PIL/Image.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
+        <state relative-caret-position="34575">
           <caret line="2311" selection-start-line="2311" selection-end-line="2311" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/face_recognition/test_images.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="103">
+        <state relative-caret-position="1230">
           <caret line="85" column="8" selection-start-line="85" selection-start-column="8" selection-end-line="86" selection-end-column="20" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
@@ -591,21 +550,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/face_recognition/identification.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
+        <state relative-caret-position="3075">
           <caret line="209" column="37" lean-forward="true" selection-start-line="209" selection-start-column="37" selection-end-line="209" selection-end-column="37" />
           <folding>
             <element signature="e#0#45#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/default_picture_labels/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="135">
-            <caret line="9" column="30" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
-          </first_editor>
-          <second_editor />
         </state>
       </provider>
     </entry>
@@ -622,20 +571,10 @@
     <entry file="file://$PROJECT_DIR$/ui_with_tkinter/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/default_search_labels/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="150">
-            <caret line="10" selection-start-line="10" selection-end-line="10" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../print_directory_structure.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+        <state relative-caret-position="210">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>
@@ -645,11 +584,112 @@
     <entry file="file://$PROJECT_DIR$/face_recognition/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/README_.md" />
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="45">
-            <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+          <first_editor relative-caret-position="105">
+            <caret line="7" column="24" lean-forward="true" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/camera_photo/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="30">
+            <caret line="2" selection-start-line="2" selection-end-line="2" selection-end-column="62" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/camera_photo_identification/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="135">
+            <caret line="9" column="62" selection-start-line="9" selection-start-column="62" selection-end-line="9" selection-end-column="62" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/default_label_identification/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="135">
+            <caret line="9" column="62" selection-start-line="9" selection-start-column="62" selection-end-line="9" selection-end-column="62" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/default_picture_labels/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="135">
+            <caret line="9" column="62" selection-start-line="9" selection-start-column="62" selection-end-line="9" selection-end-column="62" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/default_search_labels/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="135">
+            <caret line="9" column="62" selection-start-line="9" selection-start-column="62" selection-end-line="9" selection-end-column="62" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README_resource/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor>
+            <caret column="66" selection-start-column="66" selection-end-column="66" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor>
+            <caret column="46" lean-forward="true" selection-start-column="46" selection-end-column="46" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/face_recognition/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor>
+            <caret column="6" selection-start-column="6" selection-end-column="6" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ui_with_tkinter/face_recognition_ui.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6780">
+          <caret line="452" column="49" selection-start-line="452" selection-start-column="49" selection-end-line="452" selection-end-column="49" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ui_with_tkinter/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor>
+            <caret column="15" lean-forward="true" selection-start-column="15" selection-end-column="15" />
           </first_editor>
           <second_editor />
         </state>

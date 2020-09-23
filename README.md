@@ -92,8 +92,7 @@
 
 ![ans2](README_resource/search_ans2.png)
 
-#### *More...*
-![ans3](README_resource/search_answer.png)
+
 
 ---
 
